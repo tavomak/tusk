@@ -25,7 +25,6 @@ const ContactForm = () => {
         { ...form },
         {
           publicKey: process.env.NEXT_PUBLIC_EMAIL_JS_PUBLIC_KEY,
-          // eslint-disable-next-line prettier/prettier
         }
       );
       if (response.status !== 200) throw new Error();

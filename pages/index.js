@@ -112,20 +112,15 @@ const Home = ({ data, customers, projects }) => {
           <div className="mb-5">
             <RichContent content={data?.whoWeAreText?.[1]?.raw} />
           </div>
-          <ul className="flex flex-wrap w-full">
+          <ul className="flex flex-wrap items-center justify-center w-full">
             {customers?.slice(0, 6)?.map((customer) => (
               <li className="w-1/3 px-6" key={customer?.title}>
                 <Image
-                  unoptimized
                   src={customer?.logo?.url}
                   alt={customer?.title}
                   width={280}
                   height={100}
-                  style={{
-                    width: 'auto',
-                    height: '100px',
-                    objectFit: 'contain',
-                  }}
+                  className="w-full lg:p-6"
                 />
               </li>
             ))}

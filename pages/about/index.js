@@ -81,20 +81,15 @@ const About = ({ data, customers, services }) => {
       </section>
 
       <section className="container px-4 mx-auto my-10 max-w-screen-2xl">
-        <ul className="flex flex-col flex-wrap justify-center w-full lg:flex-row">
+        <ul className="flex flex-col flex-wrap items-center justify-center w-full lg:flex-row">
           {customers?.map((customer) => (
             <li className="p-6 lg:w-1/3" key={customer?.title}>
               <Image
-                unoptimized
                 src={customer?.logo?.url}
                 alt={customer?.title}
                 width={280}
                 height={100}
-                style={{
-                  width: 'auto',
-                  height: '100px',
-                  objectFit: 'contain',
-                }}
+                className="w-full lg:p-6"
               />
             </li>
           ))}
