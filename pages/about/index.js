@@ -53,10 +53,14 @@ const About = ({ data, customers, services }) => {
         </div>
         <div className="lg:w-2/3">
           <div className="mb-5">
-            <RichContent content={data?.whoWeAreText?.[0]?.raw} />
+            {data?.whoWeAreText?.[0]?.raw ? (
+              <RichContent content={data?.whoWeAreText?.[0]?.raw} />
+            ) : null}
           </div>
           <div className="mb-5">
-            <RichContent content={data?.whoWeAreText?.[1]?.raw} />
+            {data?.whoWeAreText?.[1]?.raw ? (
+              <RichContent content={data?.whoWeAreText?.[1]?.raw} />
+            ) : null}
           </div>
         </div>
       </section>

@@ -1,16 +1,15 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Spinner from '@/components/Atoms/Spinner';
 
 const Button = ({
   children,
-  loading,
+  loading = false,
   loadingType,
-  text,
-  className,
-  submit,
+  text = '',
+  className = '',
+  submit = false,
   onClick,
-  disabled,
+  disabled = false,
 }) => (
   <button
     className={`${className} flex align-center gap-2 disabled:opacity-70`}
@@ -19,17 +18,8 @@ const Button = ({
     disabled={loading || disabled}
   >
     {loading && <Spinner type={loadingType} />}
-    {children || text}
+    {children ?? text}
   </button>
 );
-
-Button.propTypes = {
-  text: PropTypes.string,
-  loading: PropTypes.bool,
-  className: PropTypes.string,
-  submit: PropTypes.bool,
-  onClick: PropTypes.func,
-  children: PropTypes.node,
-};
 
 export default Button;
