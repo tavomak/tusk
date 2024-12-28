@@ -1,0 +1,35 @@
+article.main a {
+  @apply font-semibold;
+  transition-duration: var(--default-timing-duration);
+  transition-timing-function: var(--default-timing-function);
+  transition-property: all;
+}
+
+.btn {
+  @apply inline-flex items-center px-6 py-2 font-semibold;
+  transition-duration: var(--default-timing-duration);
+  transition-timing-function: var(--default-timing-function);
+  transition-property: background-color, color, transform, box-shadow;
+  background: var(--btn-background-color);
+  border-color: var(--btn-border-color);
+  color: var(--btn-color);
+  border-radius: 50rem;
+  border-width: 2px;
+}
+
+.btn:hover {
+  transform: var(--btn-hover-transform);
+  box-shadow: var(--default-box-shadow);
+}
+
+.btn-primary {
+  --btn-color: var(--white);
+  --btn-border-color: var(--primary-color);
+}
+.btn-primary:hover,
+.btn-primary.active {
+  --btn-color: var(--black);
+  --btn-background-color: var(--primary-color);
+  --btn-border-color: none;
+  color: var(--black);
+}

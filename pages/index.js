@@ -1,115 +1,150 @@
-import Image from "next/image";
-import localFont from "next/font/local";
+import Image from 'next/image';
+import Link from 'next/link';
+import { getPageBySlug, getCustomers, getProjects } from '@/utils/lib/api';
+import { socialMedia } from '@/utils/constants';
+import { AdvancedVideo } from '@cloudinary/react';
+import { Cloudinary } from '@cloudinary/url-gen';
+import useTranslation from 'next-translate/useTranslation';
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+import Marquee from 'react-fast-marquee';
+import Layout from '@/components/Templates/Layout';
+import VideoIframe from '@/components/Atoms/VideoIframe';
+import RichContent from '@/components/Atoms/RichContent';
+import ScrollTriggered from '@/components/Atoms/ScrollTriggered';
+import Button from '@/components/Atoms/Button';
 
-export default function Home() {
-  return (
-    <div
-      className={`${geistSans.variable} ${geistMono.variable} grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]`}
-    >
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              pages/index.js
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+export async function getStaticProps(context) {
+  const { locale } = context;
+  const response = await getPageBySlug('home', [locale]);
+  const customersResponse = await getCustomers([locale]);
+  const projectsResponse = await getProjects([locale]);
+  const data = response?.data?.page || [];
+  const customers = customersResponse?.data?.customers || [];
+  const projects = projectsResponse?.data?.projects || [];
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+  return {
+    props: {
+      data,
+      customers,
+      projects,
+    },
+    revalidate: 100,
+  };
 }
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  url: 'https://www.tuskcontent.com/',
+  logo: 'https://www.tuskcontent.com/horizontal-logo.jpg',
+  name: 'Tuskcontent',
+  legalName: 'Tuskcontent',
+  sameAs: [socialMedia.linkedin, socialMedia.instagram],
+};
+
+const cld = new Cloudinary({
+  cloud: {
+    cloudName: 'dztujbt99',
+  },
+});
+
+const sectionVideo = cld.video('tusk_-_why-1080p_rdrser');
+
+const Home = ({ data, customers, projects }) => {
+  const { t } = useTranslation('common');
+  return (
+    <Layout
+      title={data?.seoMetaData?.title}
+      description={data?.seoMetaData?.description}
+      schema={structuredData}
+    >
+      <section className="container mx-auto max-w-screen-2xl  mt-8 lg:-mt-[58px] xl:-mt-16 ">
+        <div className="mx-4 overflow-hidden rounded-xl xl:rounded-3xl">
+          <VideoIframe videoId={data?.primaryVideo} />
+        </div>
+      </section>
+
+      <section className="py-6 overflow-x-hidden lg:py-10">
+        <Marquee speed={200}>
+          <h1 className="flex  gap-4 text-[10vw] font-bold me-20">
+            <span className="text-primary-color"> Design </span>
+            <span>Mobile </span>
+            <span>
+              <i>Filmmaking</i>
+            </span>
+          </h1>
+        </Marquee>
+      </section>
+
+      <section className="container flex flex-col justify-between gap-4 px-4 mx-auto xl:gap-10 lg:flex-row">
+        <div className="lg:w-1/2">
+          <div className="my-5">
+            <RichContent content={data?.twoColumnsText?.[0]?.raw} />
+          </div>
+        </div>
+        <div className="lg:w-1/2">
+          <div className="my-5">
+            <RichContent content={data?.twoColumnsText?.[1]?.raw} />
+          </div>
+        </div>
+      </section>
+
+      <section className="container px-4 py-10 mx-auto xl:py-20 max-w-screen-2xl">
+        <div className="overflow-hidden rounded-xl xl:rounded-3xl">
+          <AdvancedVideo
+            cldVid={sectionVideo}
+            autoPlay
+            loop
+            muted
+            playsInline
+          />
+        </div>
+      </section>
+
+      <section className="container flex flex-col justify-between gap-4 px-4 mx-auto mb-10 xl:mb-20 lg:py-10 max-w-screen-2xl xl:gap-10 lg:flex-row">
+        <div className="lg:w-1/3">
+          <h3 className="text-4xl font-bold">{t('who_we_are_title')}</h3>
+        </div>
+        <div className="lg:w-2/3">
+          <div className="mb-5">
+            <RichContent content={data?.whoWeAreText?.[0]?.raw} />
+          </div>
+          <div className="mb-5">
+            <RichContent content={data?.whoWeAreText?.[1]?.raw} />
+          </div>
+          <ul className="flex flex-wrap w-full">
+            {customers?.slice(0, 6)?.map((customer) => (
+              <li className="w-1/3 px-6" key={customer?.title}>
+                <Image
+                  unoptimized
+                  src={customer?.logo?.url}
+                  alt={customer?.title}
+                  width={280}
+                  height={100}
+                  style={{
+                    width: 'auto',
+                    height: '100px',
+                    objectFit: 'contain',
+                  }}
+                />
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section className="container px-4 mx-auto mb-10 max-w-screen-2xl">
+        <ScrollTriggered items={projects} />
+        <div className="flex justify-center">
+          <Link href="/projects">
+            <Button className="btn btn-primary">
+              {t('view_all_projects')}
+            </Button>
+          </Link>
+        </div>
+      </section>
+    </Layout>
+  );
+};
+
+export default Home;

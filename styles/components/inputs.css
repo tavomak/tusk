@@ -1,0 +1,12 @@
+.react-tel-input .form-control,
+.react-tel-input .flag-dropdown {
+  @apply border-none py-2;
+}
+
+.react-tel-input .form-control {
+  @apply w-full;
+}
+
+.react-tel-input .selected-flag:hover {
+  @apply bg-transparent;
+}

@@ -1,0 +1,22 @@
+:root {
+  --white: #ffffff;
+  --black: #000000;
+  --primary-color: #8bfc8c;
+
+  --primary-font: var(--font-poppins), sans-serif;
+
+  --btn-color: '';
+  --btn-background-color: '';
+  --btn-border-color: '';
+  --btn-hover-transform: translateY(-2px);
+
+  --spinner-color: var(--white);
+  --spinner-width: 100%;
+  --spinner-height: 100%;
+  --spinner-stroke: 3px;
+
+  --default-box-shadow: 0 0.5rem 1.5rem rgb(98 52 130 / 20%);
+
+  --default-timing-duration: 0.4s;
+  --default-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
