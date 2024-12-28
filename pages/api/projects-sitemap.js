@@ -1,9 +1,23 @@
-import { navItems } from '@/utils';
+import { getProjects, siteUrl } from '@/utils';
 import { SitemapStream, streamToPromise } from 'sitemap';
 import { Readable } from 'stream';
 
 const sitemapBlog = async (req, res) => {
-  const staticPages = navItems.map((item) => ({ url: item.path }));
+  const {
+    data: { projects },
+  } = await getProjects(['en']);
+
+  const baseUrl = siteUrl;
+
+  const staticEnPages = projects.map(
+    (item) => `${baseUrl}/en/projects/${item.slug}`
+  );
+
+  const staticEsPages = projects.map(
+    (item) => `${baseUrl}/projects/${item.slug}`
+  );
+
+  const staticPages = [...staticEnPages, ...staticEsPages];
 
   const stream = new SitemapStream({ hostname: `https://${req.headers.host}` });
 
