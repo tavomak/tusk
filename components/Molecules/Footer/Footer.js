@@ -14,7 +14,7 @@ const Footer = () => {
       <div className="px-4 py-16 mx-auto md:container sm:px-6 lg:px-8">
         <div className="flex flex-col items-center gap-4 mb-16">
           <h2 className="text-[12vw] md:text-[80px] lg:text-[100px] font-bold">
-            <span>Take you </span>
+            <span>Take your </span>
             <span className="text-primary-color">Shot</span>
           </h2>
           <p className="text-[40px] md:text-[60px] lg:text-[80px] font-bold">

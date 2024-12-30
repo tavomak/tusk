@@ -40,3 +40,13 @@ export const environments = {
   production: 'production',
   development: 'development',
 };
+
+export const flagIconsMapping = {
+  en: 'eng',
+  es: 'spa',
+};
+
+export const languages = {
+  en: 'en',
+  es: 'es',
+};

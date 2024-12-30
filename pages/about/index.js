@@ -37,9 +37,9 @@ const About = ({ data, customers, services }) => {
           />
         </div>
         <Marquee speed={200}>
-          <h1 className="flex gap-4 text-[10vw] font-bold me-20">
-            <span className="text-primary-color"> Design </span>
-            <span>Mobile </span>
+          <h1 className="flex gap-4 py-6 text-6xl font-bold 2xl:text-9xl me-20">
+            <span className="text-primary-color"> Mobile </span>
+            <span>Design </span>
             <span>
               <i>Filmmaking</i>
             </span>
@@ -89,7 +89,7 @@ const About = ({ data, customers, services }) => {
                 alt={customer?.title}
                 width={280}
                 height={100}
-                className="w-full lg:p-6"
+                className="object-contain w-full lg:p-6 max-h-40"
               />
             </li>
           ))}
