@@ -24,11 +24,12 @@ const MobileNavigation = ({
           alt={siteName}
           width={120}
           height={36}
+          className="w-[120px] h-auto"
+          priority
           style={{
             width: '120px',
             height: 'auto',
           }}
-          priority
         />
       </Link>
       <Hamburger open={menuOpen} setOpen={setMenuOpen} />

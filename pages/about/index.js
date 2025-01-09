@@ -2,28 +2,25 @@ import Layout from '@/components/Templates/Layout';
 import Marquee from 'react-fast-marquee';
 import Image from 'next/image';
 import RichContent from '@/components/Atoms/RichContent';
-import { getPageBySlug, getServices, getCustomers } from '@/utils/lib/api';
+import { getPageBySlug, getServices } from '@/utils/lib/api';
 import useTranslation from 'next-translate/useTranslation';
 
 export async function getStaticProps(context) {
   const { locale } = context;
   const pageResponse = await getPageBySlug('about', [locale]);
-  const servicesResponse = await getServices([locale]);
-  const customersResponse = await getCustomers([locale]);
   const data = pageResponse?.data?.page || [];
+  const servicesResponse = await getServices([locale]);
   const services = servicesResponse?.data?.services || [];
-  const customers = customersResponse?.data?.customers || [];
   return {
     props: {
       data,
-      customers,
       services,
     },
     revalidate: 100,
   };
 }
 
-const About = ({ data, customers, services }) => {
+const About = ({ data, services }) => {
   const { t } = useTranslation('common');
   return (
     <Layout title="About">
@@ -78,22 +75,6 @@ const About = ({ data, customers, services }) => {
             ))}
           </ul>
         </div>
-      </section>
-
-      <section className="container px-4 mx-auto my-10 max-w-screen-2xl">
-        <ul className="flex flex-col flex-wrap items-center justify-center w-full lg:flex-row">
-          {customers?.map((customer) => (
-            <li className="p-6 lg:w-1/3" key={customer?.title}>
-              <Image
-                src={customer?.logo?.url}
-                alt={customer?.title}
-                width={280}
-                height={100}
-                className="object-contain w-full lg:p-6 max-h-40"
-              />
-            </li>
-          ))}
-        </ul>
       </section>
     </Layout>
   );

@@ -28,6 +28,8 @@ export const getTeam = (locales) =>
           image(locales: en) {
             id
             url
+            height
+            width
           }
           name
           phone
@@ -51,6 +53,8 @@ export const getCustomers = (locales) =>
           logo(locales: en) {
             id
             url
+            height
+            width
           }
         }
       }
@@ -72,6 +76,8 @@ export const getProjects = (locales) =>
           primaryImage(locales: en) {
             id
             url
+            height
+            width
           }
         }
       }
@@ -90,6 +96,8 @@ export const getProjectBySlug = (slug, locales) =>
           primaryImage {
             id
             url
+            height
+            width
           }
           slug
           title
@@ -120,6 +128,8 @@ export const getPageBySlug = (slug, locales) =>
             keywords
             seoImage {
               url
+              height
+              width
             }
           }
           whoWeAreTitle
@@ -132,6 +142,8 @@ export const getPageBySlug = (slug, locales) =>
           primaryImage(locales: en) {
             id
             url
+            height
+            width
           }
         }
       }
