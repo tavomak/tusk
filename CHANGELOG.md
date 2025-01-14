@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/tavomak/tusk/compare/v1.4.0...v1.5.0) (2025-01-14)
+
+
+### Features
+
+* (Projects) Design fixes ([7b78b86](https://github.com/tavomak/tusk/commit/7b78b869a598d6d2b535960931bd363f0f015bf7))
+
 # [1.4.0](https://github.com/tavomak/tusk/compare/v1.3.0...v1.4.0) (2025-01-09)
 
 
