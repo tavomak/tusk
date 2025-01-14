@@ -145,6 +145,15 @@ export const getPageBySlug = (slug, locales) =>
             height
             width
           }
+          projects(locales: en) {
+            id
+            title
+            slug
+            primaryImage(locales: en) {
+              id
+              url
+            }
+          }
         }
       }
     `,

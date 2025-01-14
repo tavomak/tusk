@@ -34,17 +34,21 @@ const Projects = ({ data, projects, customers }) => {
       <section className="py-6 overflow-x-hidden lg:py-10 min-h-[40vh] flex flex-col items-center justify-center">
         <Marquee speed={200}>
           <h1 className="flex gap-4 py-6 text-6xl font-bold 2xl:text-9xl me-20">
-            <span> {data?.title} </span>
+            <span className="text-primary-color"> Mobile </span>
+            <span>Design </span>
+            <span>
+              <i>Filmmaking</i>
+            </span>
           </h1>
         </Marquee>
       </section>
       <section className="container px-4 mx-auto max-w-screen-2xl">
-        <div className="gap-12 space-y-4 columns-2 md:columns-3">
+        <div className="flex flex-wrap w-full">
           {projects.map((project) => (
             <Link
               key={project?.id}
               href={`${lang === 'es' ? '' : 'en'}/projects/${project?.slug}`}
-              className="flex flex-col group"
+              className="flex flex-col w-2/6 p-4 group"
             >
               <Image
                 src={project?.primaryImage?.url}
@@ -77,7 +81,7 @@ const Projects = ({ data, projects, customers }) => {
       <section className="container px-4 mx-auto my-10 max-w-screen-2xl">
         <ul className="flex flex-col flex-wrap items-center justify-center w-full lg:flex-row">
           {customers?.map((customer) => (
-            <li className="p-6 lg:w-1/3" key={customer?.title}>
+            <li className="p-12 lg:w-3/12" key={customer?.title}>
               <Image
                 src={customer?.logo?.url}
                 alt={customer?.title}

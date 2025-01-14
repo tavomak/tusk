@@ -18,7 +18,7 @@ const Item = ({ title, primaryImage }) => {
           scale,
           transition: 'ease-in-out',
         }}
-        className="overflow-hidden rounded-lg xl:rounded-3xl"
+        className="overflow-hidden border rounded-lg xl:rounded-3xl border-neutral-800"
       >
         <Image
           src={primaryImage?.url}

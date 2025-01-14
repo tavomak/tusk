@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { getPageBySlug, getCustomers, getProjects } from '@/utils/lib/api';
+import { getPageBySlug, getCustomers } from '@/utils/lib/api';
 import { socialMedia } from '@/utils/constants';
 import { AdvancedVideo } from '@cloudinary/react';
 import { Cloudinary } from '@cloudinary/url-gen';
@@ -17,16 +17,13 @@ export async function getStaticProps(context) {
   const { locale } = context;
   const response = await getPageBySlug('home', [locale]);
   const customersResponse = await getCustomers([locale]);
-  const projectsResponse = await getProjects([locale]);
   const data = response?.data?.page || [];
   const customers = customersResponse?.data?.customers || [];
-  const projects = projectsResponse?.data?.projects || [];
 
   return {
     props: {
       data,
       customers,
-      projects,
     },
     revalidate: 100,
   };
@@ -50,7 +47,8 @@ const cld = new Cloudinary({
 
 const sectionVideo = cld.video('tusk_-_why-1080p_rdrser');
 
-const Home = ({ data, customers, projects }) => {
+const Home = ({ data, customers }) => {
+  console.log({ data });
   const { t } = useTranslation('common');
   return (
     <Layout
@@ -129,7 +127,7 @@ const Home = ({ data, customers, projects }) => {
       </section>
 
       <section className="container px-4 mx-auto mb-10 max-w-screen-2xl">
-        <ScrollTriggered items={projects} />
+        {data?.projects && <ScrollTriggered items={data?.projects} />}
         <div className="flex justify-center">
           <Link href="/projects">
             <Button className="btn btn-primary">

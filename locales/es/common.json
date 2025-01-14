@@ -29,5 +29,14 @@
   "contact_form_client_phone_max_length": "Debe tener 9 dígitos",
   "contact_form_client_phone_min_length": "Debe tener 9 dígitos",
   "contact_form_submit": "Enviar",
-  "footer_copyright": "Todos los derechos reservados"
+  "footer_copyright": "Todos los derechos reservados",
+  "privacy_notice": "Aviso de privacidad",
+  "footer_locations": {
+    "chile": "Chile",
+    "poland": "Polonia",
+    "spain": "España",
+    "mexico": "México",
+    "hong_kong": "Hong Kong",
+    "usa": "Estados Unidos"
+  }
 }

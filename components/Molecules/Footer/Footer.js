@@ -13,11 +13,11 @@ const Footer = () => {
     <footer className="text-white bg-gradient-to-r from-dark-blue to-purple">
       <div className="px-4 py-16 mx-auto md:container sm:px-6 lg:px-8">
         <div className="flex flex-col items-center gap-4 mb-16">
-          <h2 className="text-[12vw] md:text-[80px] lg:text-[100px] font-bold">
+          <h2 className="text-[6vw] md:text-[40px] lg:text-[50px] font-bold">
             <span>Take your </span>
             <span className="text-primary-color">Shot</span>
           </h2>
-          <p className="text-[40px] md:text-[60px] lg:text-[80px] font-bold">
+          <p className="text-[20px] md:text-[30px] lg:text-[40px] font-bold">
             Let&apos;s | Work
           </p>
           <Link href={navItems[4].path}>
@@ -33,32 +33,33 @@ const Footer = () => {
           <Image
             src="/vertical-logo.svg"
             alt="Logo"
-            width={100}
-            height={100}
+            width={25}
+            height={158}
             style={{
-              height: '160px',
+              height: '100%',
               width: 'auto',
             }}
+            className="object-contain"
             priority
           />
         </div>
         <div className="justify-between text-center md:flex md:text-left">
           <div className="my-6 md:my-0">
-            <p>Privacy Notice</p>
+            <p>{t('privacy_notice')}</p>
             <p>
               <a href={`mailto:${siteEmail}`}>{siteEmail}</a>
             </p>
           </div>
           <div>
             <ul className="flex justify-center gap-4">
-              <li className="w-24">Chile</li>
-              <li className="w-24">Poland</li>
-              <li className="w-24">Spain</li>
+              <li className="w-24">{t('footer_locations.chile')}</li>
+              <li className="w-24">{t('footer_locations.poland')}</li>
+              <li className="w-24">{t('footer_locations.spain')}</li>
             </ul>
             <ul className="flex justify-center gap-4">
-              <li className="w-24">Mexico</li>
-              <li className="w-24">Hong Kong</li>
-              <li className="w-24">USA</li>
+              <li className="w-24">{t('footer_locations.mexico')}</li>
+              <li className="w-24">{t('footer_locations.hong_kong')}</li>
+              <li className="w-24">{t('footer_locations.usa')}</li>
             </ul>
           </div>
         </div>

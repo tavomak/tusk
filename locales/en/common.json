@@ -11,15 +11,15 @@
   "contact_title": "Contact us",
   "contact_success_message": "We have received your message. An executive will contact you shortly.",
   "contact_error_message": "¡Message not sent, please try again!",
-  "contact_form_client_name": "Enter a name",
+  "contact_form_client_name": "Name",
   "contact_form_client_name_placeholder": "Enter a name",
-  "contact_form_client_last_name": "Enter a last name",
+  "contact_form_client_last_name": "Last name",
   "contact_form_client_last_name_placeholder": "Enter a last name",
-  "contact_form_client_email": "Enter an email",
+  "contact_form_client_email": "Email",
   "contact_form_client_email_placeholder": "Enter an email",
-  "contact_form_client_phone": "Enter a phone",
+  "contact_form_client_phone": "Phone",
   "contact_form_client_phone_placeholder": "Enter a phone",
-  "contact_form_client_message": "Enter a message",
+  "contact_form_client_message": "Message",
   "contact_form_client_message_placeholder": "Enter a message",
   "contact_form_client_name_required": "Name required",
   "contact_form_client_last_name_required": "Last name required",
@@ -29,5 +29,14 @@
   "contact_form_client_phone_max_length": "Must have 9 digits",
   "contact_form_client_phone_min_length": "Must have 9 digits",
   "contact_form_submit": "Send",
-  "footer_copyright": "All rights reserved"
+  "footer_copyright": "All rights reserved",
+  "privacy_notice": "Privacy Notice",
+  "footer_locations": {
+    "chile": "Chile",
+    "poland": "Poland",
+    "spain": "Spain",
+    "mexico": "Mexico",
+    "hong_kong": "Hong Kong",
+    "usa": "USA"
+  }
 }
