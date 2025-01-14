@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/tavomak/tusk/compare/v1.5.0...v1.6.0) (2025-01-14)
+
+
+### Features
+
+* (Config) Move translation config ([c91f7ae](https://github.com/tavomak/tusk/commit/c91f7ae54d94186390676ac13cf9003330fb2e51))
+
 # [1.5.0](https://github.com/tavomak/tusk/compare/v1.4.0...v1.5.0) (2025-01-14)
 
 
