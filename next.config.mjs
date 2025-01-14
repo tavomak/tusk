@@ -30,8 +30,8 @@ const nextConfig = {
 };
 
 const config = {
-  ...nextConfig,
   ...nextTranslate(),
+  ...nextConfig,
 };
 
 export default config;
