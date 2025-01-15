@@ -38,5 +38,8 @@
     "mexico": "México",
     "hong_kong": "Hong Kong",
     "usa": "Estados Unidos"
+  },
+  "seo": {
+    "default_description": "Mobile Design Filmmaking es una concepción que redefine la creación audiovisual combinando diseño, narrativa y tecnología móvil en un flujo creativo único."
   }
 }
