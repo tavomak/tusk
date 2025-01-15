@@ -1,3 +1,11 @@
+# [1.10.0](https://github.com/tavomak/tusk/compare/v1.9.0...v1.10.0) (2025-01-15)
+
+
+### Features
+
+* (SEO) Default description ([3eba9b7](https://github.com/tavomak/tusk/commit/3eba9b757a0c0e23dcb3c00cbe00c266779385c3))
+* (SEO) Default description ([09c1648](https://github.com/tavomak/tusk/commit/09c16489435e17fc72146ae14f1a052fbcf0af75))
+
 # [1.9.0](https://github.com/tavomak/tusk/compare/v1.8.0...v1.9.0) (2025-01-15)
 
 
