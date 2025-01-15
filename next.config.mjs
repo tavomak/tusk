@@ -27,6 +27,9 @@ const nextConfig = {
     workerThreads: false,
     cpus: 1,
   },
+  staticPageGenerationTimeout: 180,
+  concurrentFeatures: false,
+  generateEtags: false,
 };
 
 const config = {
