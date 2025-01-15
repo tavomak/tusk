@@ -48,7 +48,6 @@ const cld = new Cloudinary({
 const sectionVideo = cld.video('tusk_-_why-1080p_rdrser');
 
 const Home = ({ data, customers }) => {
-  console.log({ data });
   const { t } = useTranslation('common');
   return (
     <Layout
@@ -57,7 +56,7 @@ const Home = ({ data, customers }) => {
       schema={structuredData}
     >
       <section className="container mx-auto max-w-screen-2xl  mt-8 lg:-mt-[58px] xl:-mt-16 ">
-        <div className="mx-4 overflow-hidden rounded-xl xl:rounded-3xl">
+        <div className="mx-4 overflow-hidden border rounded-xl xl:rounded-3xl border-neutral-800">
           <VideoIframe videoId={data?.primaryVideo} />
         </div>
       </section>
@@ -99,17 +98,22 @@ const Home = ({ data, customers }) => {
         </div>
       </section>
 
-      <section className="container flex flex-col justify-between gap-4 px-4 mx-auto mb-10 xl:mb-20 lg:py-10 max-w-screen-2xl xl:gap-10 lg:flex-row">
-        <div className="lg:w-1/3">
-          <h3 className="text-4xl font-bold">{t('who_we_are_title')}</h3>
-        </div>
+      {data?.sections?.map((section) => (
+        <section
+          key={section?.id}
+          className="container flex flex-col justify-between gap-4 px-4 mx-auto mb-10 xl:mb-20 lg:py-10 max-w-screen-2xl xl:gap-10 lg:flex-row"
+        >
+          <div className="lg:w-1/3">
+            <h2 className="font-bold lg:text-4xl">{section?.title}</h2>
+          </div>
+          <div className="lg:w-2/3">
+            <RichContent content={section?.content?.json} />
+          </div>
+        </section>
+      ))}
+
+      <section className="container flex justify-end px-4 mx-auto mb-10 max-w-screen-2xl">
         <div className="lg:w-2/3">
-          <div className="mb-5">
-            <RichContent content={data?.whoWeAreText?.[0]?.raw} />
-          </div>
-          <div className="mb-5">
-            <RichContent content={data?.whoWeAreText?.[1]?.raw} />
-          </div>
           <ul className="flex flex-wrap items-center justify-center w-full">
             {customers?.slice(0, 6)?.map((customer) => (
               <li className="w-1/3 px-6" key={customer?.title}>

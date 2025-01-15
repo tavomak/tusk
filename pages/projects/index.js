@@ -43,19 +43,19 @@ const Projects = ({ data, projects, customers }) => {
         </Marquee>
       </section>
       <section className="container px-4 mx-auto max-w-screen-2xl">
-        <div className="flex flex-wrap w-full">
+        <div className="flex-wrap w-full md:flex">
           {projects.map((project) => (
             <Link
               key={project?.id}
               href={`${lang === 'es' ? '' : 'en'}/projects/${project?.slug}`}
-              className="flex flex-col w-2/6 p-4 group"
+              className="flex flex-col p-4 mb-5 md:w-3/6 lg:w-2/6 group"
             >
               <Image
                 src={project?.primaryImage?.url}
                 alt={project?.title}
                 width={project?.primaryImage?.width || 300}
                 height={project?.primaryImage?.height || 300}
-                className="transition-all duration-300 shadow rounded-xl hover:scale-105"
+                className="transition-all duration-300 border shadow rounded-xl hover:scale-105 border-neutral-800"
                 priority
                 style={{
                   height: '300px',

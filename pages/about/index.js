@@ -2,7 +2,7 @@ import Layout from '@/components/Templates/Layout';
 import Marquee from 'react-fast-marquee';
 import Image from 'next/image';
 import RichContent from '@/components/Atoms/RichContent';
-import { getPageBySlug, getServices } from '@/utils/lib/api';
+import { getPageBySlug, getServices, siteName } from '@/utils';
 import useTranslation from 'next-translate/useTranslation';
 
 export async function getStaticProps(context) {
@@ -28,9 +28,15 @@ const About = ({ data, services }) => {
         <div className="w-1/3">
           <Image
             src={data?.primaryImage?.url}
-            alt={data?.primaryImage?.alt}
-            width={280}
-            height={100}
+            alt={data?.primaryImage?.alt || siteName}
+            width={data?.primaryImage?.width || 445}
+            height={data?.primaryImage?.height || 604}
+            priority
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+            }}
           />
         </div>
         <Marquee speed={200}>
@@ -44,36 +50,32 @@ const About = ({ data, services }) => {
         </Marquee>
       </section>
 
-      <section className="container flex flex-col justify-between gap-4 px-4 mx-auto mb-10 xl:mb-20 lg:py-10 max-w-screen-2xl xl:gap-10 lg:flex-row">
-        <div className="lg:w-1/3">
-          <h2 className="font-bold lg:text-4xl">{data?.whoWeAreTitle}</h2>
-        </div>
-        <div className="lg:w-2/3">
-          <div className="mb-5">
-            {data?.whoWeAreText?.[0]?.raw ? (
-              <RichContent content={data?.whoWeAreText?.[0]?.raw} />
-            ) : null}
+      {data?.sections?.map((section) => (
+        <section
+          key={section?.id}
+          className="container flex flex-col justify-between gap-4 px-4 mx-auto mb-10 xl:mb-20 lg:py-10 max-w-screen-2xl xl:gap-10 lg:flex-row"
+        >
+          <div className="lg:w-1/3">
+            <h2 className="font-bold lg:text-4xl">{section?.title}</h2>
           </div>
-          <div className="mb-5">
-            {data?.whoWeAreText?.[1]?.raw ? (
-              <RichContent content={data?.whoWeAreText?.[1]?.raw} />
-            ) : null}
+          <div className="lg:w-2/3">
+            <RichContent content={section?.content?.json} />
           </div>
-        </div>
-      </section>
+        </section>
+      ))}
 
       <section className="container flex flex-col justify-between gap-4 px-4 mx-auto mb-10 xl:mb-20 lg:py-10 max-w-screen-2xl xl:gap-10 lg:flex-row">
         <div className="lg:w-1/3">
           <h3 className="text-4xl font-bold">{t('nav_services_title')}</h3>
         </div>
         <div className="lg:w-2/3">
-          <ul>
+          <ol className="list-disc">
             {services?.map((service) => (
               <li key={service?.id}>
                 <p className="mb-10 text-2xl font-bold">{service?.title}</p>
               </li>
             ))}
-          </ul>
+          </ol>
         </div>
       </section>
     </Layout>

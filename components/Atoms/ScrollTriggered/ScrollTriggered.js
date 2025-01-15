@@ -1,5 +1,6 @@
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'motion/react';
+import Link from 'next/link';
 import Image from 'next/image';
 
 const Item = ({ title, primaryImage }) => {
@@ -23,8 +24,8 @@ const Item = ({ title, primaryImage }) => {
         <Image
           src={primaryImage?.url}
           alt={`Image ${title}`}
-          width={1280}
-          height={500}
+          width={primaryImage?.width || 1440}
+          height={primaryImage?.height || 810}
           style={{
             width: '100%',
             height: 'auto',
@@ -37,8 +38,10 @@ const Item = ({ title, primaryImage }) => {
 
 const ScrollTriggered = ({ items }) => (
   <section>
-    {items.map(({ title, primaryImage }) => (
-      <Item title={title} primaryImage={primaryImage} key={title} />
+    {items.map((project) => (
+      <Link href={`/projects/${project.slug}`} key={project.title}>
+        <Item title={project.title} primaryImage={project.primaryImage} />
+      </Link>
     ))}
   </section>
 );

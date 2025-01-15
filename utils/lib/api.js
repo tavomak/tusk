@@ -136,6 +136,13 @@ export const getPageBySlug = (slug, locales) =>
           whoWeAreText {
             raw
           }
+          sections {
+            id
+            title
+            content {
+              json
+            }
+          }
           twoColumnsText {
             raw
           }

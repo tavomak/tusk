@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Layout from '@/components/Templates/Layout';
 import Marquee from 'react-fast-marquee';
-import { getPageBySlug } from '@/utils/lib/api';
+import { getPageBySlug, siteName } from '@/utils';
 import ContactForm from '@/components/Molecules/ContactForm';
 
 export async function getStaticProps(context) {
@@ -36,13 +36,14 @@ const Contact = ({ data }) => (
         {data?.primaryImage?.url && (
           <Image
             src={data?.primaryImage?.url}
-            alt={data?.primaryImage?.alt}
-            width={280}
-            height={100}
+            alt={data?.primaryImage?.alt || siteName}
+            width={data?.primaryImage?.width || 280}
+            height={data?.primaryImage?.height || 100}
+            priority
             style={{
               width: '100%',
-              height: 'auto',
-              objectFit: 'contain',
+              height: '100%',
+              objectFit: 'cover',
             }}
           />
         )}
