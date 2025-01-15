@@ -1,7 +1,7 @@
 import { ToastContainer } from 'react-toastify';
-
 import Head from 'next/head';
 import Script from 'next/script';
+import useTranslation from 'next-translate/useTranslation';
 import Navbar from '@/components/Molecules/Navbar';
 import Footer from '@/components/Molecules/Footer';
 import PropTypes from 'prop-types';
@@ -9,14 +9,15 @@ import { siteName } from '@/utils';
 
 const Layout = ({ children, title, description, schema, className }) => {
   const hostname = typeof window !== 'undefined' ? window.location.href : '';
+  const { t } = useTranslation('common');
   return (
     <>
       <Head>
-        <title>{`${title} | ${siteName}`}</title>
+        <title>{`${title ? `${title} | ${siteName}` : siteName}`}</title>
         <meta charSet="UTF-8" />
         <meta
           name="description"
-          content={`${description?.length > 0 ? description : siteName}`}
+          content={`${description || t('seo.default_description')}`}
         />
         <link rel="canonical" href={hostname} />
         <meta property="og:locale" content="es_ES" />
