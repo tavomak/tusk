@@ -1,3 +1,10 @@
+# [1.8.0](https://github.com/tavomak/tusk/compare/v1.7.0...v1.8.0) (2025-01-15)
+
+
+### Features
+
+* (Config) Next config concurrency ([ebbd43f](https://github.com/tavomak/tusk/commit/ebbd43f182101fbc8003efea54e8b6b8b8825011))
+
 # [1.7.0](https://github.com/tavomak/tusk/compare/v1.6.0...v1.7.0) (2025-01-15)
 
 
