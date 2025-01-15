@@ -14,7 +14,10 @@ const Layout = ({ children, title, description, schema, className }) => {
       <Head>
         <title>{`${title} | ${siteName}`}</title>
         <meta charSet="UTF-8" />
-        <meta name="description" content={`${description || siteName}`} />
+        <meta
+          name="description"
+          content={`${description.length > 0 ? description : siteName}`}
+        />
         <link rel="canonical" href={hostname} />
         <meta property="og:locale" content="es_ES" />
         <meta property="og:type" content="article" />
