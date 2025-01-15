@@ -1,3 +1,10 @@
+# [1.7.0](https://github.com/tavomak/tusk/compare/v1.6.0...v1.7.0) (2025-01-15)
+
+
+### Features
+
+* (Design) Design fixes ([7cb6dbf](https://github.com/tavomak/tusk/commit/7cb6dbfd05aa38dcd2e20c5837c4452642255bc0))
+
 # [1.6.0](https://github.com/tavomak/tusk/compare/v1.5.0...v1.6.0) (2025-01-14)
 
 
