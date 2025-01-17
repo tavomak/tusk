@@ -28,12 +28,12 @@ const Team = ({ data, team }) => (
         <h1 className="flex gap-4 py-6 text-6xl font-bold 2xl:text-9xl me-20">
           <span> {data?.title} </span>
           <span>- {data?.title} -</span>
-          <span> {data?.title} -</span>
+          <span> {data?.title} </span>
         </h1>
       </Marquee>
     </section>
 
-    <section className="container px-4 mx-auto max-w-screen-2xl">
+    <section className="container max-w-screen-xl px-4 mx-auto">
       <div className="gap-4 space-y-4 sm:columns-2 md:columns-3 xl:columns-4">
         {team?.length > 0 &&
           team.map((item) => (

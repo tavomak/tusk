@@ -2,8 +2,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { getPageBySlug, getCustomers } from '@/utils/lib/api';
 import { socialMedia } from '@/utils/constants';
-import { AdvancedVideo } from '@cloudinary/react';
-import { Cloudinary } from '@cloudinary/url-gen';
 import useTranslation from 'next-translate/useTranslation';
 
 import Marquee from 'react-fast-marquee';
@@ -39,23 +37,15 @@ const structuredData = {
   sameAs: [socialMedia.linkedin, socialMedia.instagram],
 };
 
-const cld = new Cloudinary({
-  cloud: {
-    cloudName: 'dztujbt99',
-  },
-});
-
-const sectionVideo = cld.video('tusk_-_why-1080p_rdrser');
-
 const Home = ({ data, customers }) => {
-  const { t } = useTranslation('common');
+  const { t, lang } = useTranslation('common');
   return (
     <Layout
       title={data?.seoMetaData?.title}
       description={data?.seoMetaData?.description}
       schema={structuredData}
     >
-      <section className="container mx-auto max-w-screen-2xl  mt-8 lg:-mt-[58px] xl:-mt-16 ">
+      <section className="container mx-auto max-w-screen-xl  mt-8 lg:-mt-[58px] xl:-mt-16 ">
         <div className="mx-4 overflow-hidden border rounded-xl xl:rounded-3xl border-neutral-800">
           <VideoIframe videoId={data?.primaryVideo} />
         </div>
@@ -86,22 +76,16 @@ const Home = ({ data, customers }) => {
         </div>
       </section>
 
-      <section className="container px-4 py-10 mx-auto xl:py-20 max-w-screen-2xl">
-        <div className="overflow-hidden rounded-xl xl:rounded-3xl">
-          <AdvancedVideo
-            cldVid={sectionVideo}
-            autoPlay
-            loop
-            muted
-            playsInline
-          />
+      <section className="container max-w-screen-xl px-4 py-10 mx-auto xl:py-20">
+        <div className="overflow-hidden border rounded-xl xl:rounded-3xl border-neutral-800">
+          <VideoIframe videoId={lang === 'es' ? '1047514385' : '1047513077'} />
         </div>
       </section>
 
       {data?.sections?.map((section) => (
         <section
           key={section?.id}
-          className="container flex flex-col justify-between gap-4 px-4 mx-auto mb-10 xl:mb-20 lg:py-10 max-w-screen-2xl xl:gap-10 lg:flex-row"
+          className="container flex flex-col justify-between max-w-screen-xl gap-4 px-4 mx-auto mb-10 xl:mb-20 lg:py-10 xl:gap-10 lg:flex-row"
         >
           <div className="lg:w-1/3">
             <h2 className="font-bold lg:text-4xl">{section?.title}</h2>
@@ -112,17 +96,22 @@ const Home = ({ data, customers }) => {
         </section>
       ))}
 
-      <section className="container flex justify-end px-4 mx-auto mb-10 max-w-screen-2xl">
+      <section className="container flex justify-end max-w-screen-xl px-4 mx-auto mb-10">
         <div className="lg:w-2/3">
           <ul className="flex flex-wrap items-center justify-center w-full">
             {customers?.slice(0, 6)?.map((customer) => (
-              <li className="w-1/3 px-6" key={customer?.title}>
+              <li className="w-1/2 px-6 mb-5 md:w-1/3" key={customer?.title}>
                 <Image
                   src={customer?.logo?.url}
                   alt={customer?.title}
                   width={280}
                   height={100}
-                  className="w-full lg:p-6"
+                  style={{
+                    width: '100%',
+                    height: '100px',
+                    maxHeight: '90px',
+                    objectFit: 'contain',
+                  }}
                 />
               </li>
             ))}
@@ -130,7 +119,7 @@ const Home = ({ data, customers }) => {
         </div>
       </section>
 
-      <section className="container px-4 mx-auto mb-10 max-w-screen-2xl">
+      <section className="container max-w-screen-xl px-4 mx-auto mb-10">
         {data?.projects && <ScrollTriggered items={data?.projects} />}
         <div className="flex justify-center">
           <Link href="/projects">

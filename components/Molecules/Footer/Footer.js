@@ -30,22 +30,26 @@ const Footer = () => {
           </Link>
         </div>
         <div className="flex justify-center">
-          <Image
-            src="/vertical-logo.svg"
-            alt="Logo"
-            width={25}
-            height={158}
-            style={{
-              height: '100%',
-              width: 'auto',
-            }}
-            className="object-contain"
-            priority
-          />
+          <div className="w-12">
+            <Image
+              src="/tusk_horizontal.png"
+              alt="Logo"
+              width={62}
+              height={150}
+              style={{
+                width: '100%',
+                height: 'auto',
+                objectFit: 'contain',
+              }}
+              priority
+            />
+          </div>
         </div>
         <div className="justify-between text-center md:flex md:text-left">
           <div className="my-6 md:my-0">
-            <p>{t('privacy_notice')}</p>
+            <Link href="/terms-conditions">
+              <p>{t('terms_conditions')}</p>
+            </Link>
             <p>
               <a href={`mailto:${siteEmail}`}>{siteEmail}</a>
             </p>

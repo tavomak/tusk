@@ -25,7 +25,7 @@ const About = ({ data, services }) => {
   return (
     <Layout title="About">
       <section className="py-6 overflow-x-hidden lg:py-10 min-h-[40vh] flex flex-col items-center justify-center">
-        <div className="w-1/3">
+        <div className="w-5/6 md:w-1/2 lg:w-1/3">
           <Image
             src={data?.primaryImage?.url}
             alt={data?.primaryImage?.alt || siteName}
@@ -53,7 +53,7 @@ const About = ({ data, services }) => {
       {data?.sections?.map((section) => (
         <section
           key={section?.id}
-          className="container flex flex-col justify-between gap-4 px-4 mx-auto mb-10 xl:mb-20 lg:py-10 max-w-screen-2xl xl:gap-10 lg:flex-row"
+          className="container flex flex-col justify-between max-w-screen-xl gap-4 px-4 mx-auto mb-10 xl:mb-20 lg:py-10 xl:gap-10 lg:flex-row"
         >
           <div className="lg:w-1/3">
             <h2 className="font-bold lg:text-4xl">{section?.title}</h2>
@@ -64,18 +64,18 @@ const About = ({ data, services }) => {
         </section>
       ))}
 
-      <section className="container flex flex-col justify-between gap-4 px-4 mx-auto mb-10 xl:mb-20 lg:py-10 max-w-screen-2xl xl:gap-10 lg:flex-row">
+      <section className="container flex flex-col justify-between max-w-screen-xl gap-4 px-4 mx-auto mb-10 xl:mb-20 lg:py-10 xl:gap-10 lg:flex-row">
         <div className="lg:w-1/3">
           <h3 className="text-4xl font-bold">{t('nav_services_title')}</h3>
         </div>
         <div className="lg:w-2/3">
-          <ol className="list-disc">
+          <ul className="pl-5 list-disc">
             {services?.map((service) => (
               <li key={service?.id}>
                 <p className="mb-10 text-2xl font-bold">{service?.title}</p>
               </li>
             ))}
-          </ol>
+          </ul>
         </div>
       </section>
     </Layout>

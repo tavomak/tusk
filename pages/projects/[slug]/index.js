@@ -39,7 +39,7 @@ const Project = ({ data }) => (
         </h1>
       </Marquee>
     </section>
-    <section className="container mx-auto max-w-screen-2xl  mt-8 lg:-mt-[58px] xl:-mt-11 ">
+    <section className="container mx-auto max-w-screen-xl  mt-8 lg:-mt-[58px] xl:-mt-11 ">
       <div className="mx-4 overflow-hidden border rounded-xl xl:rounded-3xl border-neutral-800">
         <VideoIframe videoId={data?.viemoId} />
       </div>

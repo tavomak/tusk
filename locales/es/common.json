@@ -30,14 +30,14 @@
   "contact_form_client_phone_min_length": "Debe tener 9 dígitos",
   "contact_form_submit": "Enviar",
   "footer_copyright": "Todos los derechos reservados",
-  "privacy_notice": "Aviso de privacidad",
+  "terms_conditions": "Aviso de privacidad",
   "footer_locations": {
     "chile": "Chile",
     "poland": "Polonia",
     "spain": "España",
     "mexico": "México",
     "hong_kong": "Hong Kong",
-    "usa": "Estados Unidos"
+    "usa": "USA"
   },
   "seo": {
     "default_description": "Mobile Design Filmmaking es una concepción que redefine la creación audiovisual combinando diseño, narrativa y tecnología móvil en un flujo creativo único."

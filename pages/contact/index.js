@@ -26,12 +26,12 @@ const Contact = ({ data }) => (
         <h1 className="flex gap-4 py-6 text-6xl font-bold 2xl:text-9xl me-20">
           <span> {data?.title} </span>
           <span>- {data?.title} -</span>
-          <span> {data?.title} -</span>
+          <span> {data?.title} </span>
         </h1>
       </Marquee>
     </section>
 
-    <section className="container flex px-4 mx-auto max-w-screen-2xl">
+    <section className="container flex max-w-screen-xl px-4 mx-auto">
       <div className="w-1/3 px-6">
         {data?.primaryImage?.url && (
           <Image

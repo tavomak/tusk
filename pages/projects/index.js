@@ -31,7 +31,7 @@ const Projects = ({ data, projects, customers }) => {
       title={data?.seoMetaData?.title}
       description={data?.seoMetaData?.description}
     >
-      <section className="py-6 overflow-x-hidden lg:py-10 min-h-[40vh] flex flex-col items-center justify-center">
+      <section className="py-6 overflow-x-hidden lg:py-10 lg:min-h-[40vh] flex flex-col items-center justify-center">
         <Marquee speed={200}>
           <h1 className="flex gap-4 py-6 text-6xl font-bold 2xl:text-9xl me-20">
             <span className="text-primary-color"> Mobile </span>
@@ -42,13 +42,13 @@ const Projects = ({ data, projects, customers }) => {
           </h1>
         </Marquee>
       </section>
-      <section className="container px-4 mx-auto max-w-screen-2xl">
+      <section className="container max-w-screen-xl px-4 mx-auto">
         <div className="flex-wrap w-full md:flex">
           {projects.map((project) => (
             <Link
               key={project?.id}
               href={`${lang === 'es' ? '' : 'en'}/projects/${project?.slug}`}
-              className="flex flex-col p-4 mb-5 md:w-3/6 lg:w-2/6 group"
+              className="flex flex-col mb-5 md:p-4 md:w-3/6 lg:w-2/6 group"
             >
               <Image
                 src={project?.primaryImage?.url}
@@ -58,7 +58,7 @@ const Projects = ({ data, projects, customers }) => {
                 className="transition-all duration-300 border shadow rounded-xl hover:scale-105 border-neutral-800"
                 priority
                 style={{
-                  height: '300px',
+                  height: '250px',
                   width: '100%',
                   objectFit: 'cover',
                 }}
@@ -70,25 +70,32 @@ const Projects = ({ data, projects, customers }) => {
           ))}
         </div>
       </section>
-      <section className="container flex flex-col justify-between gap-4 px-4 mx-auto mt-10 xl:mt-20 lg:py-10 max-w-screen-2xl xl:gap-10 lg:flex-row">
+      <section className="container flex flex-col justify-between max-w-screen-xl gap-4 px-4 mx-auto mt-10 xl:mt-20 lg:py-10 xl:gap-10 lg:flex-row">
         <div className="lg:w-1/3">
-          <h2 className="font-bold lg:text-4xl">{t('our_customers')}</h2>
+          <h2 className="text-xl font-bold lg:text-4xl">
+            {t('our_customers')}
+          </h2>
         </div>
         <div className="lg:w-2/3">
           <div className="mb-5" />
         </div>
       </section>
-      <section className="container px-4 mx-auto my-10 max-w-screen-2xl">
+      <section className="container max-w-screen-xl px-4 mx-auto my-10">
         <ul className="flex flex-col flex-wrap items-center justify-center w-full lg:flex-row">
           {customers?.map((customer) => (
-            <li className="p-12 lg:w-3/12" key={customer?.title}>
+            <li className="w-1/2 p-12 lg:w-3/12" key={customer?.title}>
               <Image
                 src={customer?.logo?.url}
                 alt={customer?.title}
                 width={customer?.logo?.width || 280}
                 height={customer?.logo?.height || 100}
                 priority
-                className="object-contain w-full lg:p-6 max-h-40"
+                style={{
+                  width: '100%',
+                  height: '100px',
+                  maxHeight: '90px',
+                  objectFit: 'contain',
+                }}
               />
             </li>
           ))}
