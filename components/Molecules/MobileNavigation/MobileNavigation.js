@@ -61,6 +61,11 @@ const MobileNavigation = ({
               )}
             </li>
           ))}
+        <li className="mb-5 text-xl font-bold">
+          <a href="https://tusk.shiftcam.com/" target="_blank">
+            Store
+          </a>
+        </li>
         <li>
           <LanguageSwitcher />
         </li>

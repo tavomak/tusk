@@ -46,6 +46,11 @@ const DesktopNavigation = ({ navItems }) => {
             </li>
           ))}
           <li>
+            <a href="https://tusk.shiftcam.com/" target="_blank">
+              Store
+            </a>
+          </li>
+          <li>
             <LanguageSwitcher />
           </li>
         </ul>

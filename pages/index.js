@@ -45,7 +45,7 @@ const Home = ({ data, customers }) => {
       description={data?.seoMetaData?.description}
       schema={structuredData}
     >
-      <section className="container mx-auto max-w-screen-xl  mt-8 lg:-mt-[58px] xl:-mt-16 ">
+      <section className="container mx-auto max-w-screen-2xl mt-8 lg:-mt-[58px] xl:-mt-16 ">
         <div className="mx-4 overflow-hidden border rounded-xl xl:rounded-3xl border-neutral-800">
           <VideoIframe videoId={data?.primaryVideo} />
         </div>
