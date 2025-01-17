@@ -1,3 +1,10 @@
+# [1.13.0](https://github.com/tavomak/tusk/compare/v1.12.0...v1.13.0) (2025-01-17)
+
+
+### Features
+
+* (Store) Store link ([18af80d](https://github.com/tavomak/tusk/commit/18af80d93985d1ea667a0c6c9c2428f4c0661e00))
+
 # [1.12.0](https://github.com/tavomak/tusk/compare/v1.11.0...v1.12.0) (2025-01-17)
 
 
