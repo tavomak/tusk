@@ -1,3 +1,10 @@
+# [1.12.0](https://github.com/tavomak/tusk/compare/v1.11.0...v1.12.0) (2025-01-17)
+
+
+### Features
+
+* (design) Brand colors, Videos, Layouts ([7be0d23](https://github.com/tavomak/tusk/commit/7be0d23ea48d0ee6ceb2cf6bf685088e426c10b7))
+
 # [1.11.0](https://github.com/tavomak/tusk/compare/v1.10.0...v1.11.0) (2025-01-15)
 
 
