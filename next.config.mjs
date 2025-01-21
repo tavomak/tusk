@@ -20,14 +20,13 @@ const nextConfig = {
       },
     ],
   },
-  typescript: {
-    ignoreBuildErrors: true,
-  },
   experimental: {
     workerThreads: false,
     cpus: 1,
   },
-  staticPageGenerationTimeout: 180,
+  staticPageGenerationTimeout: 1000,
+  retryOnError: true,
+  maxRetries: 3,
   concurrentFeatures: false,
   generateEtags: false,
 };
