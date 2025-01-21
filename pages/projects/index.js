@@ -79,13 +79,13 @@ const Projects = ({ data, projects }) => {
       </section>
       <section className="container max-w-screen-xl px-4 mx-auto my-10">
         <ul className="flex flex-col flex-wrap items-center justify-center w-full lg:flex-row">
-          {data?.logos?.map((logo) => (
-            <li className="w-1/2 p-12 lg:w-3/12" key={logo?.id}>
+          {data?.logos?.map((item) => (
+            <li className="w-1/2 p-12 lg:w-3/12" key={item?.id}>
               <Image
-                src={logo?.url}
-                alt={logo?.title}
-                width={logo?.width || 280}
-                height={logo?.height || 100}
+                src={item?.logo?.url}
+                alt={item?.title}
+                width={item?.logo?.width || 280}
+                height={item?.logo?.height || 100}
                 priority
                 style={{
                   width: '100%',
