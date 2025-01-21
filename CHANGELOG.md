@@ -1,3 +1,10 @@
+# [1.16.0](https://github.com/tavomak/tusk/compare/v1.15.0...v1.16.0) (2025-01-21)
+
+
+### Features
+
+* (Pages) Logos ([9728a3d](https://github.com/tavomak/tusk/commit/9728a3d533fb0dd9e4cd3816e418a5415b0f34ff))
+
 # [1.15.0](https://github.com/tavomak/tusk/compare/v1.14.0...v1.15.0) (2025-01-21)
 
 
