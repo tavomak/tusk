@@ -1,3 +1,10 @@
+# [1.15.0](https://github.com/tavomak/tusk/compare/v1.14.0...v1.15.0) (2025-01-21)
+
+
+### Features
+
+* (Config) Concurrency ([5660a2f](https://github.com/tavomak/tusk/commit/5660a2f5dbfe4ac41dc8f6afebf3257236909be6))
+
 # [1.14.0](https://github.com/tavomak/tusk/compare/v1.13.0...v1.14.0) (2025-01-21)
 
 
