@@ -26,6 +26,7 @@ const Item = ({ title, primaryImage }) => {
           alt={`Image ${title}`}
           width={primaryImage?.width || 1440}
           height={primaryImage?.height || 810}
+          priority
           style={{
             width: '100%',
             height: 'auto',

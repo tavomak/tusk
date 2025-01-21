@@ -22,7 +22,7 @@ const Footer = () => {
           </p>
           <Link href={navItems[4].path}>
             <Button className="btn btn-primary group">
-              <span className="mr-2">{siteEmail}</span>
+              <span className="mr-2">{t('nav_contact_title')}</span>
               <span className="transition-colors duration-300 text-primary-color group-hover:text-black">
                 <BrandIcon />
               </span>

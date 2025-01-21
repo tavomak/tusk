@@ -1,7 +1,7 @@
 export const siteName = 'Tuskcontent';
 
 export const siteUrl = 'https://tuskcontent.com';
-export const siteEmail = 'contact@tuskcontent.com';
+export const siteEmail = 'infotusk@tuskcontent.com';
 
 export const navItems = [
   {

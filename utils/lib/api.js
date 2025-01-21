@@ -161,6 +161,17 @@ export const getPageBySlug = (slug, locales) =>
               url
             }
           }
+          logos(locales: en) {
+            id
+            title
+            logo {
+              url
+              fileName
+              id
+              height
+              width
+            }
+          }
         }
       }
     `,

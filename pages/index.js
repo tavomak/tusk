@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { getPageBySlug, getCustomers } from '@/utils/lib/api';
+import { getPageBySlug } from '@/utils/lib/api';
 import { socialMedia } from '@/utils/constants';
 import useTranslation from 'next-translate/useTranslation';
 
@@ -14,14 +14,11 @@ import Button from '@/components/Atoms/Button';
 export async function getStaticProps(context) {
   const { locale } = context;
   const response = await getPageBySlug('home', [locale]);
-  const customersResponse = await getCustomers([locale]);
   const data = response?.data?.page || [];
-  const customers = customersResponse?.data?.customers || [];
 
   return {
     props: {
       data,
-      customers,
     },
     revalidate: 100,
   };
@@ -37,7 +34,7 @@ const structuredData = {
   sameAs: [socialMedia.linkedin, socialMedia.instagram],
 };
 
-const Home = ({ data, customers }) => {
+const Home = ({ data }) => {
   const { t, lang } = useTranslation('common');
   return (
     <Layout
@@ -99,11 +96,11 @@ const Home = ({ data, customers }) => {
       <section className="container flex justify-end max-w-screen-xl px-4 mx-auto mb-10">
         <div className="lg:w-2/3">
           <ul className="flex flex-wrap items-center justify-center w-full">
-            {customers?.slice(0, 6)?.map((customer) => (
-              <li className="w-1/2 px-6 mb-5 md:w-1/3" key={customer?.title}>
+            {data?.logos?.slice(0, 6)?.map((logo) => (
+              <li className="w-1/2 px-6 mb-5 md:w-1/3" key={logo?.id}>
                 <Image
-                  src={customer?.logo?.url}
-                  alt={customer?.title}
+                  src={logo?.logo?.url}
+                  alt={logo?.title}
                   width={280}
                   height={100}
                   style={{
