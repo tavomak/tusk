@@ -1,3 +1,10 @@
+# [1.14.0](https://github.com/tavomak/tusk/compare/v1.13.0...v1.14.0) (2025-01-21)
+
+
+### Features
+
+* (Logos) Home Logo selector ([9ab9b15](https://github.com/tavomak/tusk/commit/9ab9b1595c458cf2f7212e806ca06f5a41394010))
+
 # [1.13.0](https://github.com/tavomak/tusk/compare/v1.12.0...v1.13.0) (2025-01-17)
 
 
