@@ -23,7 +23,6 @@ export async function getStaticProps(context) {
 const Projects = ({ data, projects }) => {
   const { lang } = useTranslation();
   const { t } = useTranslation('common');
-  console.log({ data });
   return (
     <Layout
       title={data?.seoMetaData?.title}
