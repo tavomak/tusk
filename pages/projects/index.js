@@ -3,7 +3,7 @@ import Link from 'next/link';
 import useTranslation from 'next-translate/useTranslation';
 import Layout from '@/components/Templates/Layout';
 import Marquee from 'react-fast-marquee';
-import { getPageBySlug, getProjects, getCustomers } from '@/utils/lib/api';
+import { getPageBySlug, getProjects } from '@/utils/lib/api';
 
 export async function getStaticProps(context) {
   const { locale } = context;
@@ -11,21 +11,19 @@ export async function getStaticProps(context) {
   const data = pageResponse?.data?.page || [];
   const projectsResponse = await getProjects([locale]);
   const projects = projectsResponse?.data?.projects || [];
-  const customersResponse = await getCustomers([locale]);
-  const customers = customersResponse?.data?.customers || [];
   return {
     props: {
       data,
       projects,
-      customers,
     },
     revalidate: 100,
   };
 }
 
-const Projects = ({ data, projects, customers }) => {
+const Projects = ({ data, projects }) => {
   const { lang } = useTranslation();
   const { t } = useTranslation('common');
+  console.log({ data });
   return (
     <Layout
       title={data?.seoMetaData?.title}
@@ -82,13 +80,13 @@ const Projects = ({ data, projects, customers }) => {
       </section>
       <section className="container max-w-screen-xl px-4 mx-auto my-10">
         <ul className="flex flex-col flex-wrap items-center justify-center w-full lg:flex-row">
-          {customers?.map((customer) => (
-            <li className="w-1/2 p-12 lg:w-3/12" key={customer?.title}>
+          {data?.logos?.map((logo) => (
+            <li className="w-1/2 p-12 lg:w-3/12" key={logo?.id}>
               <Image
-                src={customer?.logo?.url}
-                alt={customer?.title}
-                width={customer?.logo?.width || 280}
-                height={customer?.logo?.height || 100}
+                src={logo?.url}
+                alt={logo?.title}
+                width={logo?.width || 280}
+                height={logo?.height || 100}
                 priority
                 style={{
                   width: '100%',

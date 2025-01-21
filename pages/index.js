@@ -96,7 +96,7 @@ const Home = ({ data }) => {
       <section className="container flex justify-end max-w-screen-xl px-4 mx-auto mb-10">
         <div className="lg:w-2/3">
           <ul className="flex flex-wrap items-center justify-center w-full">
-            {data?.logos?.slice(0, 6)?.map((logo) => (
+            {data?.logos?.slice(0, 8)?.map((logo) => (
               <li className="w-1/2 px-6 mb-5 md:w-1/3" key={logo?.id}>
                 <Image
                   src={logo?.logo?.url}

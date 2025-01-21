@@ -25,10 +25,6 @@ const nextConfig = {
     cpus: 1,
   },
   staticPageGenerationTimeout: 1000,
-  retryOnError: true,
-  maxRetries: 3,
-  concurrentFeatures: false,
-  generateEtags: false,
 };
 
 const config = {
