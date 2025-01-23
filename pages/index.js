@@ -51,8 +51,8 @@ const Home = ({ data }) => {
       <section className="py-6 overflow-x-hidden lg:py-10">
         <Marquee speed={200}>
           <h1 className="flex gap-4 py-6 text-6xl font-bold 2xl:text-9xl me-20">
-            <span className="text-primary-color"> Mobile </span>
-            <span>Design </span>
+            <span> Mobile </span>
+            <span className="text-primary-color">Design </span>
             <span>
               <i>Filmmaking</i>
             </span>
