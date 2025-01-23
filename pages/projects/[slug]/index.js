@@ -2,9 +2,10 @@ import Layout from '@/components/Templates/Layout';
 import Marquee from 'react-fast-marquee';
 import VideoIframe from '@/components/Atoms/VideoIframe';
 
-import { getProjects, getProjectBySlug } from '@/utils/lib/api';
+import { getProjects, getProjectBySlug, rateLimit } from '@/utils';
 
 export async function getStaticProps({ params, locale }) {
+  await rateLimit();
   const { slug } = params;
   const response = await getProjectBySlug(slug, [locale]);
   const data = response?.data?.project || [];
@@ -17,6 +18,7 @@ export async function getStaticProps({ params, locale }) {
 }
 
 export async function getStaticPaths({ locales }) {
+  await rateLimit();
   const response = await getProjects(locales);
   const projects = response?.data?.projects || [];
   return {

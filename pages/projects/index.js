@@ -3,14 +3,15 @@ import Link from 'next/link';
 import useTranslation from 'next-translate/useTranslation';
 import Layout from '@/components/Templates/Layout';
 import Marquee from 'react-fast-marquee';
-import { getPageBySlug, getProjects } from '@/utils/lib/api';
+import { getPageBySlug, getProjects, rateLimit } from '@/utils';
 
-export async function getStaticProps(context) {
-  const { locale } = context;
+export async function getStaticProps({ locale }) {
+  await rateLimit();
   const pageResponse = await getPageBySlug('projects', [locale]);
   const data = pageResponse?.data?.page || [];
   const projectsResponse = await getProjects([locale]);
   const projects = projectsResponse?.data?.projects || [];
+
   return {
     props: {
       data,
