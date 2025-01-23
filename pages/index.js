@@ -35,7 +35,7 @@ const structuredData = {
 };
 
 const Home = ({ data }) => {
-  const { t, lang } = useTranslation('common');
+  const { t } = useTranslation('common');
   return (
     <Layout
       title={data?.seoMetaData?.title}
@@ -75,7 +75,7 @@ const Home = ({ data }) => {
 
       <section className="container max-w-screen-xl px-4 py-10 mx-auto xl:py-20">
         <div className="overflow-hidden border rounded-xl xl:rounded-3xl border-neutral-800">
-          <VideoIframe videoId={lang === 'es' ? '1047514385' : '1047513077'} />
+          <VideoIframe videoId={data?.secondVideo} />
         </div>
       </section>
 
