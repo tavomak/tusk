@@ -121,6 +121,7 @@ export const getPageBySlug = (slug, locales) =>
           title
           pageType
           primaryVideo
+          secondVideo
           description
           seoMetadata {
             title

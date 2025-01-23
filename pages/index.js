@@ -35,7 +35,7 @@ const structuredData = {
 };
 
 const Home = ({ data }) => {
-  const { t, lang } = useTranslation('common');
+  const { t } = useTranslation('common');
   return (
     <Layout
       title={data?.seoMetaData?.title}
@@ -51,8 +51,8 @@ const Home = ({ data }) => {
       <section className="py-6 overflow-x-hidden lg:py-10">
         <Marquee speed={200}>
           <h1 className="flex gap-4 py-6 text-6xl font-bold 2xl:text-9xl me-20">
-            <span className="text-primary-color"> Mobile </span>
-            <span>Design </span>
+            <span> Mobile </span>
+            <span className="text-primary-color">Design </span>
             <span>
               <i>Filmmaking</i>
             </span>
@@ -75,7 +75,7 @@ const Home = ({ data }) => {
 
       <section className="container max-w-screen-xl px-4 py-10 mx-auto xl:py-20">
         <div className="overflow-hidden border rounded-xl xl:rounded-3xl border-neutral-800">
-          <VideoIframe videoId={lang === 'es' ? '1047514385' : '1047513077'} />
+          <VideoIframe videoId={data?.secondVideo} />
         </div>
       </section>
 
