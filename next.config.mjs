@@ -24,11 +24,7 @@ const nextConfig = {
     workerThreads: false,
     cpus: 1,
   },
-  staticPageGenerationTimeout: 1000,
-  retryOnError: true,
-  maxRetries: 3,
-  concurrentFeatures: false,
-  generateEtags: false,
+  staticPageGenerationTimeout: 180,
 };
 
 const config = {
