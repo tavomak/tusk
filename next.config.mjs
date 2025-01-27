@@ -3,6 +3,7 @@ import nextTranslate from 'next-translate-plugin';
 
 const nextConfig = {
   reactStrictMode: true,
+  swcMinify: true,
   images: {
     remotePatterns: [
       {
