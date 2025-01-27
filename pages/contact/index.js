@@ -31,8 +31,8 @@ const Contact = ({ data }) => (
       </Marquee>
     </section>
 
-    <section className="container flex max-w-screen-xl px-4 mx-auto">
-      <div className="w-1/3 px-6">
+    <section className="container flex justify-center max-w-screen-xl px-4 mx-auto">
+      <div className="hidden w-1/3 px-6">
         {data?.primaryImage?.url && (
           <Image
             src={data?.primaryImage?.url}

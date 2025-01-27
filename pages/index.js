@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import { getPageBySlug } from '@/utils/lib/api';
 import { socialMedia } from '@/utils/constants';
@@ -10,6 +9,7 @@ import VideoIframe from '@/components/Atoms/VideoIframe';
 import RichContent from '@/components/Atoms/RichContent';
 import ScrollTriggered from '@/components/Atoms/ScrollTriggered';
 import Button from '@/components/Atoms/Button';
+import BrandIcon from '@/components/Atoms/BrandIcon';
 
 export async function getStaticProps(context) {
   const { locale } = context;
@@ -82,7 +82,7 @@ const Home = ({ data }) => {
       {data?.sections?.map((section) => (
         <section
           key={section?.id}
-          className="container flex flex-col justify-between max-w-screen-xl gap-4 px-4 mx-auto mb-10 xl:mb-20 lg:py-10 xl:gap-10 lg:flex-row"
+          className="container flex flex-col justify-between max-w-screen-xl gap-4 px-4 mx-auto lg:py-10 xl:gap-10 lg:flex-row"
         >
           <div className="lg:w-1/3">
             <h2 className="font-bold lg:text-4xl">{section?.title}</h2>
@@ -93,26 +93,24 @@ const Home = ({ data }) => {
         </section>
       ))}
 
-      <section className="container flex justify-end max-w-screen-xl px-4 mx-auto mb-10">
+      <section className="container flex flex-col justify-between max-w-screen-xl gap-4 px-4 mx-auto mb-10 xl:mb-20 xl:gap-10 lg:flex-row">
+        <div className="lg:w-1/3" />
         <div className="lg:w-2/3">
-          <ul className="flex flex-wrap items-center justify-center w-full">
-            {data?.logos?.slice(0, 8)?.map((logo) => (
-              <li className="w-1/2 px-6 mb-5 md:w-1/3" key={logo?.id}>
-                <Image
-                  src={logo?.logo?.url}
-                  alt={logo?.title}
-                  width={280}
-                  height={100}
-                  style={{
-                    width: '100%',
-                    height: '100px',
-                    maxHeight: '90px',
-                    objectFit: 'contain',
-                  }}
-                />
-              </li>
-            ))}
-          </ul>
+          <h2 className="flex gap-4 py-6 text-4xl font-bold me-20">
+            <span> Focus </span>
+            <span className="text-primary-color">for your </span>
+            <span>
+              <i>creativity</i>
+            </span>
+          </h2>
+          <Link href="/team">
+            <Button className="btn btn-primary group">
+              <span className="mr-2">{t('nav_team_title')}</span>
+              <span className="transition-colors duration-300 text-primary-color group-hover:text-black">
+                <BrandIcon />
+              </span>
+            </Button>
+          </Link>
         </div>
       </section>
 
