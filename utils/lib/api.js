@@ -35,6 +35,9 @@ export const getTeam = (locales) =>
           phone
           position
           email
+          biography {
+            raw
+          }
         }
       }
     `,
