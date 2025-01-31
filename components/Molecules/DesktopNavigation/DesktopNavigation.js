@@ -3,8 +3,14 @@ import Image from 'next/image';
 import useTranslation from 'next-translate/useTranslation';
 import LanguageSwitcher from '@/components/Atoms/LanguageSwitcher';
 import { siteName } from '@/utils';
+import { AnimatePresence, motion } from 'motion/react';
 
-const DesktopNavigation = ({ navItems }) => {
+const DesktopNavigation = ({
+  navItems,
+  showSubMenu,
+  setShowSubMenu,
+  handleClick,
+}) => {
   const { t } = useTranslation('common');
   const firstThreeItems = navItems.slice(0, 3);
   const lastThreeItems = navItems.slice(3, 5);
@@ -41,8 +47,39 @@ const DesktopNavigation = ({ navItems }) => {
       <div className="w-1/3">
         <ul className="flex justify-around">
           {lastThreeItems.map((item) => (
-            <li key={item.label}>
+            <li
+              key={item.label}
+              onMouseEnter={() => setShowSubMenu(item.label)}
+              onMouseLeave={() => setShowSubMenu(null)}
+            >
               <Link href={item.path}>{t(item.label)}</Link>
+              {item.children?.length > 1 && (
+                <AnimatePresence>
+                  {item.label === showSubMenu && (
+                    <motion.div
+                      initial={{ opacity: 1, transform: 'translateY(-5px)' }}
+                      animate={{ opacity: 1, transform: 'translateY(15px)' }}
+                      exit={{ opacity: 0, transform: 'translateY(-5px)' }}
+                      transition={{ duration: 0.2, ease: 'easeInOut' }}
+                      className="absolute p-5 bg-white top-8"
+                    >
+                      <ul className="flex flex-col gap-4">
+                        {item.children.map((subItem) => (
+                          <li key={subItem.path}>
+                            <a
+                              href={subItem.path}
+                              onClick={(e) => handleClick(e, subItem.path)}
+                              className="py-2 text-black hover:text-primary-color"
+                            >
+                              {t(subItem.label)}
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              )}
             </li>
           ))}
           <li>

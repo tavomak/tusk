@@ -97,8 +97,8 @@ const Home = ({ data }) => {
         <div className="lg:w-1/3" />
         <div className="lg:w-2/3">
           <h2 className="flex gap-4 py-6 text-4xl font-bold me-20">
-            <span> Focus </span>
-            <span className="text-primary-color">for your </span>
+            <span className="text-primary-color"> Focus </span>
+            <span>for your </span>
             <span>
               <i>creativity</i>
             </span>
