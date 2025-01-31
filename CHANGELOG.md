@@ -1,3 +1,10 @@
+## [1.16.1](https://github.com/tavomak/tusk/compare/v1.16.0...v1.16.1) (2025-01-31)
+
+
+### Bug Fixes
+
+* **design:** Responsive general ([17e1e01](https://github.com/tavomak/tusk/commit/17e1e01984ca46dfccdf39ef7e4e8dedf62536d3))
+
 # [1.16.0](https://github.com/tavomak/tusk/compare/v1.15.0...v1.16.0) (2025-01-21)
 
 
