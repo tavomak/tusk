@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import useTranslation from 'next-translate/useTranslation';
 import LanguageSwitcher from '@/components/Atoms/LanguageSwitcher';
-import { siteName } from '@/utils';
+import { siteName, environments } from '@/utils';
 import { AnimatePresence, motion } from 'motion/react';
 
 const DesktopNavigation = ({
@@ -52,7 +52,9 @@ const DesktopNavigation = ({
               onMouseEnter={() => setShowSubMenu(item.label)}
               onMouseLeave={() => setShowSubMenu(null)}
             >
-              <Link href={item.path}>{t(item.label)}</Link>
+              {process.env.NODE_ENV !== environments.production && (
+                <Link href={item.path}>{t(item.label)}</Link>
+              )}
               {item.children?.length > 1 && (
                 <AnimatePresence>
                   {item.label === showSubMenu && (
@@ -61,7 +63,7 @@ const DesktopNavigation = ({
                       animate={{ opacity: 1, transform: 'translateY(15px)' }}
                       exit={{ opacity: 0, transform: 'translateY(-5px)' }}
                       transition={{ duration: 0.2, ease: 'easeInOut' }}
-                      className="absolute p-5 bg-white top-8"
+                      className="absolute p-5 bg-transparent rounded-lg backdrop-blur-sm top-8 "
                     >
                       <ul className="flex flex-col gap-4">
                         {item.children.map((subItem) => (
@@ -69,7 +71,7 @@ const DesktopNavigation = ({
                             <a
                               href={subItem.path}
                               onClick={(e) => handleClick(e, subItem.path)}
-                              className="py-2 text-black hover:text-primary-color"
+                              className="py-2 text-white hover:text-primary-color"
                             >
                               {t(subItem.label)}
                             </a>

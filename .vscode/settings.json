@@ -15,5 +15,8 @@
   ],
   "files.eol": "\n",
   "tailwind-fold.foldStyle": "QUOTES",
-  "tailwind-fold.unfoldIfLineSelected": true
+  "tailwind-fold.unfoldIfLineSelected": true,
+  "[svg]": {
+    "editor.defaultFormatter": "jock.svg"
+  }
 }

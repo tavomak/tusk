@@ -55,15 +55,70 @@ const Footer = () => {
             </p>
           </div>
           <div>
-            <ul className="flex justify-center gap-4">
-              <li className="w-24">{t('footer_locations.chile')}</li>
-              <li className="w-24">{t('footer_locations.poland')}</li>
-              <li className="w-24">{t('footer_locations.spain')}</li>
+            <ul className="flex justify-center gap-4 mb-2">
+              <li className="flex w-32 gap-2">
+                <span>
+                  <Image
+                    src="/cl.svg"
+                    alt="Chile flag"
+                    width={24}
+                    height={24}
+                  />
+                </span>
+                <span>{t('footer_locations.chile')}</span>
+              </li>
+              <li className="flex w-32 gap-2">
+                <span>
+                  <Image
+                    src="/pl.svg"
+                    alt="Poland flag"
+                    width={24}
+                    height={24}
+                  />
+                </span>
+                <span>{t('footer_locations.poland')}</span>
+              </li>
+              <li className="flex w-32 gap-2">
+                <span>
+                  <Image
+                    src="/spa.svg"
+                    alt="Spanish flag"
+                    width={24}
+                    height={24}
+                  />
+                </span>
+                <span>{t('footer_locations.spain')}</span>
+              </li>
             </ul>
             <ul className="flex justify-center gap-4">
-              <li className="w-24">{t('footer_locations.mexico')}</li>
-              <li className="w-24">{t('footer_locations.hong_kong')}</li>
-              <li className="w-24">{t('footer_locations.usa')}</li>
+              <li className="flex w-32 gap-2">
+                <span>
+                  <Image
+                    src="/mx.svg"
+                    alt="Mexican flag"
+                    width={24}
+                    height={24}
+                  />
+                </span>
+                <span>{t('footer_locations.mexico')}</span>
+              </li>
+              <li className="flex w-32 gap-2">
+                <span>
+                  <Image
+                    src="/hk.svg"
+                    alt="Hong Kong flag"
+                    width={24}
+                    height={24}
+                  />
+                </span>
+                <span>{t('footer_locations.hong_kong')}</span>
+              </li>
+              <li className="flex w-32 gap-2">
+                <span>
+                  <Image src="/us.svg" alt="USA flag" width={24} height={24} />
+                </span>
+                <span>{t('footer_locations.usa')}</span>
+              </li>
             </ul>
           </div>
         </div>
