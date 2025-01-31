@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import Marquee from 'react-fast-marquee';
+import { FaLinkedin } from 'react-icons/fa';
 import { getPageBySlug } from '@/utils/lib/api';
 import Layout from '@/components/Templates/Layout';
 import Modal from '@/components/Templates/Modal';
 import RichContent from '@/components/Atoms/RichContent';
-import { FaLinkedin } from 'react-icons/fa';
 
 export async function getStaticProps(context) {
   const { locale } = context;
@@ -50,7 +50,7 @@ const Filmmakers = ({ data }) => {
       <section className="container max-w-screen-xl px-4 mx-auto">
         <div className="space-x-4 space-y-8 sm:columns-2 md:columns-3 xl:columns-4">
           {data?.team?.length > 0 &&
-            data?.team?.slice(0, 4)?.map((item) => (
+            data?.team?.slice(2, 6)?.map((item) => (
               <a
                 key={item.id}
                 className="relative block border cursor-pointer group border-neutral-800 rounded-xl"
