@@ -20,9 +20,18 @@ export const navItems = [
     children: false,
   },
   {
-    label: 'nav_team_title',
+    label: 'nav_our_team_title',
     path: '/team',
-    children: false,
+    children: [
+      {
+        label: 'nav_team_title',
+        path: '/team',
+      },
+      {
+        label: 'nav_filmmakers_title',
+        path: '/filmmakers',
+      },
+    ],
   },
   {
     label: 'nav_contact_title',

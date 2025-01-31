@@ -165,6 +165,27 @@ export const getPageBySlug = (slug, locales) =>
               url
             }
           }
+          team {
+            id
+            slug
+            image(locales: en) {
+              id
+              url
+              height
+              width
+            }
+            name
+            phone
+            position
+            email
+            biography {
+              raw
+            }
+            linkedin
+            flag(locales: en) {
+              url
+            }
+          }
           logos(locales: en) {
             id
             title

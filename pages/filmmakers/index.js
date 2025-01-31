@@ -5,6 +5,7 @@ import { getPageBySlug } from '@/utils/lib/api';
 import Layout from '@/components/Templates/Layout';
 import Modal from '@/components/Templates/Modal';
 import RichContent from '@/components/Atoms/RichContent';
+import { FaLinkedin } from 'react-icons/fa';
 
 export async function getStaticProps(context) {
   const { locale } = context;
@@ -18,7 +19,7 @@ export async function getStaticProps(context) {
   };
 }
 
-const Team = ({ data }) => {
+const Filmmakers = ({ data }) => {
   const [modal, setModal] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
   const handleClick = (e, item) => {
@@ -39,9 +40,9 @@ const Team = ({ data }) => {
       <section className="py-6 overflow-x-hidden lg:py-10 min-h-[40vh] flex flex-col items-center justify-center">
         <Marquee speed={200}>
           <h1 className="flex gap-4 py-6 text-6xl font-bold 2xl:text-9xl me-20">
-            <span> {data?.title} </span>
-            <span>- {data?.title} -</span>
-            <span> {data?.title} </span>
+            <span> Filmmakers </span>
+            <span>- Filmmakers -</span>
+            <span> Filmmakers </span>
           </h1>
         </Marquee>
       </section>
@@ -49,7 +50,7 @@ const Team = ({ data }) => {
       <section className="container max-w-screen-xl px-4 mx-auto">
         <div className="space-x-4 space-y-8 sm:columns-2 md:columns-3 xl:columns-4">
           {data?.team?.length > 0 &&
-            data?.team?.map((item) => (
+            data?.team?.slice(0, 4)?.map((item) => (
               <a
                 key={item.id}
                 className="relative block border cursor-pointer group border-neutral-800 rounded-xl"
@@ -66,6 +67,22 @@ const Team = ({ data }) => {
                   priority
                 />
                 <div className="inset-0 p-4 text-white md:justify-end group-hover:flex-col md:hidden md:absolute group-hover:flex">
+                  <div className="flex gap-2 mb-2">
+                    <span>
+                      {item?.flag && (
+                        <Image
+                          src={item?.flag?.url}
+                          alt={item?.flag?.url}
+                          width={284}
+                          height={177}
+                          className="w-8 h-6"
+                        />
+                      )}
+                    </span>
+                    <span>
+                      {item?.linkedin && <FaLinkedin className="text-2xl" />}
+                    </span>
+                  </div>
                   <h3 className="text-xl font-bold">{item.name}</h3>
                   <p className="text-sm font-bold">{item.position}</p>
                   <p className="text-sm">{item.email}</p>
@@ -78,9 +95,6 @@ const Team = ({ data }) => {
       <Modal onClick={handleClickModal} showModal={modal} size="xl">
         {selectedItem && (
           <div className="relative block px-4 mb-4 sm:px-6 lg:px-8">
-            {/* <span className="absolute inset-x-0 top-0 h-1 bg-primary-color" />
-            <span className="absolute inset-x-0 bottom-0 h-1 bg-primary-color" /> */}
-
             <div className="py-4 mb-4 sm:flex sm:justify-around sm:items-center sm:gap-8">
               <div>
                 <h3 className="text-2xl font-bold text-gray-900 sm:text-4xl">
@@ -89,10 +103,19 @@ const Team = ({ data }) => {
 
                 <p className="text-gray-600 mt-1font-medium">
                   {selectedItem.position}
+                  {selectedItem?.linkedin && (
+                    <a
+                      href={selectedItem?.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <FaLinkedin className="text-2xl text-black hover:text-primary-color" />
+                    </a>
+                  )}
                 </p>
               </div>
 
-              <div className="hidden sm:block sm:shrink-0">
+              <div className="relative hidden sm:block sm:shrink-0">
                 <Image
                   src={selectedItem.image.url}
                   alt={selectedItem.name}
@@ -106,6 +129,17 @@ const Team = ({ data }) => {
                     objectPosition: 'center center',
                   }}
                 />
+                <div className="absolute shadow-2xl -top-2 -right-2">
+                  {selectedItem?.flag && (
+                    <Image
+                      src={selectedItem?.flag?.url}
+                      alt={selectedItem?.flag?.url}
+                      width={284}
+                      height={177}
+                      className="w-10 h-8 border shadow-2xl "
+                    />
+                  )}
+                </div>
               </div>
             </div>
             <div className="inset-x-0 h-1 bg-primary-color" />
@@ -119,4 +153,4 @@ const Team = ({ data }) => {
   );
 };
 
-export default Team;
+export default Filmmakers;

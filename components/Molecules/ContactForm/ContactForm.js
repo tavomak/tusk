@@ -30,7 +30,6 @@ const ContactForm = () => {
       if (response.status !== 200) throw new Error();
       notification('success', t('contactSuccess'));
     } catch (error) {
-      console.error({ error });
       notification('error', t('contactError'));
     } finally {
       setLoading(false);
