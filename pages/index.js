@@ -96,7 +96,7 @@ const Home = ({ data }) => {
       <section className="container flex flex-col justify-between max-w-screen-xl gap-4 px-4 mx-auto mb-10 xl:mb-20 xl:gap-10 lg:flex-row">
         <div className="lg:w-1/3" />
         <div className="lg:w-2/3">
-          <h2 className="flex gap-4 py-6 text-4xl font-bold me-20">
+          <h2 className="flex gap-2 py-6 text-xl font-bold lg:gap-4 md:text-4xl lg:me-20">
             <span className="text-primary-color"> Focus </span>
             <span>for your </span>
             <span>

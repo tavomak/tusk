@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Hamburger from '@/components/Atoms/Hamburger';
 import useTranslation from 'next-translate/useTranslation';
 import LanguageSwitcher from '@/components/Atoms/LanguageSwitcher';
-import { siteName } from '@/utils';
+import { siteName, environments } from '@/utils';
 
 const MobileNavigation = ({
   menuOpen = false,
@@ -39,7 +39,8 @@ const MobileNavigation = ({
           .filter((item) => item.label !== 'Factoring')
           .map((item) => (
             <li className="text-xl font-bold" key={item.label}>
-              {item.children?.length > 1 ? (
+              {process.env.NODE_ENV !== environments.production &&
+              item.children?.length > 1 ? (
                 <>
                   {item.children.map((subItem) => (
                     <a
@@ -47,7 +48,7 @@ const MobileNavigation = ({
                       href={subItem.path}
                       onClick={(e) => {
                         setMenuOpen(false);
-                        handleClick(e, subItem.label, subItem.path);
+                        handleClick(e, subItem.path);
                       }}
                     >
                       <p className="mb-1">{t(subItem.label)}</p>
