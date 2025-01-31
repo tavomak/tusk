@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import useTranslation from 'next-translate/useTranslation';
 import LanguageSwitcher from '@/components/Atoms/LanguageSwitcher';
-import { siteName } from '@/utils';
+import { siteName, environments } from '@/utils';
 import { AnimatePresence, motion } from 'motion/react';
 
 const DesktopNavigation = ({
@@ -52,7 +52,9 @@ const DesktopNavigation = ({
               onMouseEnter={() => setShowSubMenu(item.label)}
               onMouseLeave={() => setShowSubMenu(null)}
             >
-              {item.visible && <Link href={item.path}>{t(item.label)}</Link>}
+              {process.env.NODE_ENV !== environments.production && (
+                <Link href={item.path}>{t(item.label)}</Link>
+              )}
               {item.children?.length > 1 && (
                 <AnimatePresence>
                   {item.label === showSubMenu && (
