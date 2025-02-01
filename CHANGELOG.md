@@ -1,3 +1,10 @@
+## [1.16.2](https://github.com/tavomak/tusk/compare/v1.16.1...v1.16.2) (2025-02-01)
+
+
+### Bug Fixes
+
+* **design:** Team card ([a0e00bc](https://github.com/tavomak/tusk/commit/a0e00bcf4a842ccbca3314074f9a1c9a5dbe9b4d))
+
 ## [1.16.1](https://github.com/tavomak/tusk/compare/v1.16.0...v1.16.1) (2025-01-31)
 
 
