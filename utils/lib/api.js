@@ -182,9 +182,7 @@ export const getPageBySlug = (slug, locales) =>
               raw
             }
             linkedin
-            flag(locales: en) {
-              url
-            }
+            officeTag
           }
           logos(locales: en) {
             id
