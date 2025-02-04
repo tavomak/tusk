@@ -39,33 +39,29 @@ const MobileNavigation = ({
           .filter((item) => item.visible)
           .map((item) => (
             <li className="text-xl font-bold" key={item.label}>
-              {item.children?.length > 1 ? (
-                <>
-                  {item.children.map((subItem) => (
-                    <a
-                      key={subItem.path}
-                      href={subItem.path}
-                      onClick={(e) => {
-                        setMenuOpen(false);
-                        handleClick(e, subItem.path);
-                      }}
-                    >
-                      <p className="mb-1">{t(subItem.label)}</p>
-                    </a>
-                  ))}
-                </>
-              ) : (
-                <Link href={item.path}>
-                  <p className="mb-1">{t(item.label)}</p>
-                </Link>
+              {item.external && !item.children && (
+                <a href={item.path} target="_blank">
+                  {t(item.label)}
+                </a>
               )}
+              {!item.external && !item.children && (
+                <Link href={item.path}>{t(item.label)}</Link>
+              )}
+              {item.children &&
+                item.children.map((subItem) => (
+                  <a
+                    key={subItem.path}
+                    href={subItem.path}
+                    onClick={(e) => {
+                      setMenuOpen(false);
+                      handleClick(e, subItem.path);
+                    }}
+                  >
+                    <p className="mb-1">{t(subItem.label)}</p>
+                  </a>
+                ))}
             </li>
           ))}
-        <li className="mb-5 text-xl font-bold">
-          <a href="https://tusk.shiftcam.com/" target="_blank">
-            Store
-          </a>
-        </li>
         <li>
           <LanguageSwitcher />
         </li>

@@ -43,6 +43,13 @@ export const navItems = [
     children: false,
     visible: true,
   },
+  {
+    label: 'Store',
+    path: 'https://tusk.shiftcam.com/',
+    children: false,
+    visible: true,
+    external: true,
+  },
 ];
 
 export const socialMedia = {
