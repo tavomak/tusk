@@ -12,8 +12,8 @@ const DesktopNavigation = ({
   handleClick,
 }) => {
   const { t } = useTranslation('common');
-  const firstThreeItems = navItems.slice(0, 3);
-  const lastThreeItems = navItems.slice(3, 5);
+  const firstThreeItems = navItems.slice(0, 2);
+  const lastThreeItems = navItems.slice(4, 5);
   return (
     <nav
       className="container relative flex items-center justify-between max-w-screen-xl mx-auto md:px-4"
