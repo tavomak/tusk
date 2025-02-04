@@ -1,3 +1,11 @@
+## [1.16.5](https://github.com/tavomak/tusk/compare/v1.16.4...v1.16.5) (2025-02-04)
+
+
+### Bug Fixes
+
+* **design:** Menu v2 ([6c9d17c](https://github.com/tavomak/tusk/commit/6c9d17cbc3bb28ff230d0fa30c9e55d16703db72))
+* **design:** Menu v2.1 ([c0564b5](https://github.com/tavomak/tusk/commit/c0564b5dfdaa7cff2c1fce63e0e0cb658626c4ea))
+
 ## [1.16.4](https://github.com/tavomak/tusk/compare/v1.16.3...v1.16.4) (2025-02-04)
 
 
