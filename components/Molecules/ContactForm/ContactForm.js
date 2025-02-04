@@ -17,20 +17,26 @@ const ContactForm = () => {
   const [loading, setLoading] = useState(false);
 
   const onSubmit = async (form) => {
+    console.log({
+      form,
+      publicKey: process.env.NEXT_PUBLIC_EMAIL_JS_PUBLIC_KEY,
+      email: process.env.NEXT_PUBLIC_EMAIL_JS_SERVICE_ID,
+      template: process.env.NEXT_PUBLIC_EMAIL_JS_TEMPLATE,
+    });
     setLoading(true);
     try {
       const response = await emailjs.send(
         process.env.NEXT_PUBLIC_EMAIL_JS_SERVICE_ID,
-        process.env.NEXT_PUBLIC_EMAIL_JS_TEMPLATE_SERVICES_ID,
+        process.env.NEXT_PUBLIC_EMAIL_JS_TEMPLATE,
         { ...form },
         {
           publicKey: process.env.NEXT_PUBLIC_EMAIL_JS_PUBLIC_KEY,
         }
       );
       if (response.status !== 200) throw new Error();
-      notification('success', t('contactSuccess'));
+      notification('success', t('contact_success_message'));
     } catch (error) {
-      notification('error', t('contactError'));
+      notification('error', t('contact_error_message'));
     } finally {
       setLoading(false);
     }

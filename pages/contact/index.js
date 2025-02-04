@@ -32,7 +32,7 @@ const Contact = ({ data }) => (
     </section>
 
     <section className="container flex justify-center max-w-screen-xl px-4 mx-auto">
-      <div className="hidden w-1/3 px-6">
+      <div className="hidden px-6 lg:w-1/3">
         {data?.primaryImage?.url && (
           <Image
             src={data?.primaryImage?.url}
@@ -49,7 +49,7 @@ const Contact = ({ data }) => (
         )}
       </div>
 
-      <div className="w-2/3">
+      <div className="w-full lg:w-2/3">
         <ContactForm />
       </div>
     </section>

@@ -44,7 +44,7 @@ export const navItems = [
     visible: true,
   },
   {
-    label: 'Store',
+    label: 'nav_store_title',
     path: 'https://tusk.shiftcam.com/',
     children: false,
     visible: true,
