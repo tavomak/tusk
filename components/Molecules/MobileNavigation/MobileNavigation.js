@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Hamburger from '@/components/Atoms/Hamburger';
 import useTranslation from 'next-translate/useTranslation';
 import LanguageSwitcher from '@/components/Atoms/LanguageSwitcher';
-import { siteName, environments } from '@/utils';
+import { siteName } from '@/utils';
 
 const MobileNavigation = ({
   menuOpen = false,
@@ -36,11 +36,10 @@ const MobileNavigation = ({
         className={`ps-8 flex flex-col gap-1 justify-center fixed w-screen h-screen left-0 top-0 transition-all bg-black bg-opacity-95 ${menuOpen ? 'top-0' : 'top-[-120%]'}`}
       >
         {navItems
-          .filter((item) => item.label !== 'Factoring')
+          .filter((item) => item.visible)
           .map((item) => (
             <li className="text-xl font-bold" key={item.label}>
-              {process.env.NODE_ENV !== environments.production &&
-              item.children?.length > 1 ? (
+              {item.children?.length > 1 ? (
                 <>
                   {item.children.map((subItem) => (
                     <a
