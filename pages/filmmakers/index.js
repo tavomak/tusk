@@ -8,7 +8,7 @@ import BioDetail from '@/components/Molecules/BioDetail';
 
 export async function getStaticProps(context) {
   const { locale } = context;
-  const dataResponse = await getPageBySlug('team', [locale]);
+  const dataResponse = await getPageBySlug('filmmakers', [locale]);
   const data = dataResponse?.data?.page || [];
   return {
     props: {

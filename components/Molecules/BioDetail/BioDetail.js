@@ -34,6 +34,13 @@ const BioDetail = ({ item }) => (
             objectPosition: 'center center',
           }}
         />
+        {item?.officeTag && (
+          <div className="mt-2">
+            <span className="px-4 rounded-full bg-primary-color">
+              {item?.officeTag}
+            </span>
+          </div>
+        )}
       </div>
     </div>
     <div className="inset-x-0 h-1 bg-primary-color" />
