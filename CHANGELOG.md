@@ -1,3 +1,10 @@
+## [1.16.7](https://github.com/tavomak/tusk/compare/v1.16.6...v1.16.7) (2025-02-05)
+
+
+### Bug Fixes
+
+* **layout:** Logic and design ([073c2ea](https://github.com/tavomak/tusk/commit/073c2ea10e61ad2d04826e06dccbd0542b845030))
+
 ## [1.16.6](https://github.com/tavomak/tusk/compare/v1.16.5...v1.16.6) (2025-02-04)
 
 
