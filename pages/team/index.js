@@ -47,13 +47,13 @@ const Team = ({ data }) => {
       </section>
 
       <section className="container max-w-screen-xl px-4 mx-auto">
-        <div className="space-x-4 space-y-8 sm:columns-2 md:columns-3 xl:columns-4">
+        <div className="gap-4 p-4 space-y-4 columns-1 sm:columns-2 md:columns-3 lg:columns-4">
           {data?.team?.length > 0 &&
-            data?.team
-              ?.slice(0, 4)
-              ?.map((item) => (
-                <Card key={item.id} item={item} handleClick={handleClick} />
-              ))}
+            data?.team?.map((item) => (
+              <div className="py-2" key={item.id}>
+                <Card item={item} handleClick={handleClick} />
+              </div>
+            ))}
         </div>
       </section>
 
