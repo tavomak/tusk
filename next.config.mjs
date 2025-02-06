@@ -24,7 +24,7 @@ const nextConfig = {
     workerThreads: false,
     cpus: 1,
   },
-  staticPageGenerationTimeout: 180,
+  staticPageGenerationTimeout: 1000,
 };
 
 const config = {

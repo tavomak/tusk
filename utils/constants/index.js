@@ -60,6 +60,7 @@ export const socialMedia = {
 export const environments = {
   production: 'production',
   development: 'development',
+  local: 'local',
 };
 
 export const flagIconsMapping = {
