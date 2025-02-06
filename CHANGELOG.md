@@ -1,3 +1,10 @@
+## [1.16.11](https://github.com/tavomak/tusk/compare/v1.16.10...v1.16.11) (2025-02-06)
+
+
+### Bug Fixes
+
+* **Seo:** External URL and en paths ([1d9150e](https://github.com/tavomak/tusk/commit/1d9150eeb7bc875129a5d33535737bb04cb531cd))
+
 ## [1.16.10](https://github.com/tavomak/tusk/compare/v1.16.9...v1.16.10) (2025-02-06)
 
 
