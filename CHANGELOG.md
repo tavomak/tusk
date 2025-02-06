@@ -1,3 +1,12 @@
+## [1.16.8](https://github.com/tavomak/tusk/compare/v1.16.7...v1.16.8) (2025-02-06)
+
+
+### Bug Fixes
+
+* **environment:** Environment key ([9ff9b90](https://github.com/tavomak/tusk/commit/9ff9b9009b8fca41d7716b9557bf25361441bd9b))
+* **environment:** Environment variable ([484b6bc](https://github.com/tavomak/tusk/commit/484b6bcd785b3560600b758fa14490947efc5a8d))
+* **environment:** Robots.txt ([e1b153f](https://github.com/tavomak/tusk/commit/e1b153fa07729ea843ac0cdfcf0bb323e2a9cb65))
+
 ## [1.16.7](https://github.com/tavomak/tusk/compare/v1.16.6...v1.16.7) (2025-02-05)
 
 
