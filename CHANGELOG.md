@@ -1,3 +1,10 @@
+## [1.16.9](https://github.com/tavomak/tusk/compare/v1.16.8...v1.16.9) (2025-02-06)
+
+
+### Bug Fixes
+
+* **deign:** About color ([4000fa2](https://github.com/tavomak/tusk/commit/4000fa23504e8231d65ecb552e3b55a9750cbac7))
+
 ## [1.16.8](https://github.com/tavomak/tusk/compare/v1.16.7...v1.16.8) (2025-02-06)
 
 
