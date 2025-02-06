@@ -12,7 +12,7 @@ const tagManagerArgs = {
 
 function App({ Component, pageProps }) {
   useEffect(() => {
-    if (process.env.NODE_ENV === environments.production) {
+    if (process.env.NEXT_PUBLIC_ENVIRONMENT_KEY === environments.production) {
       TagManager.initialize(tagManagerArgs);
     }
   }, []);
