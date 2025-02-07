@@ -38,8 +38,9 @@ const Home = ({ data }) => {
   const { t } = useTranslation('common');
   return (
     <Layout
-      title={data?.seoMetaData?.title}
-      description={data?.seoMetaData?.description}
+      title={data?.seoMetadata?.title}
+      description={data?.seoMetadata?.seoDescription}
+      image={data?.seoMetadata?.seoImage?.url}
       schema={structuredData}
     >
       <section className="container mx-auto max-w-screen-2xl mt-8 lg:-mt-[58px] xl:-mt-16 ">

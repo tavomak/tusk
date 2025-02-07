@@ -7,9 +7,9 @@ import Footer from '@/components/Molecules/Footer';
 import PropTypes from 'prop-types';
 import { siteName } from '@/utils';
 
-const Layout = ({ children, title, description, schema, className }) => {
+const Layout = ({ children, title, description, schema, className, image }) => {
   const hostname = typeof window !== 'undefined' ? window.location.href : '';
-  const { t } = useTranslation('common');
+  const { t, lang } = useTranslation('common');
   return (
     <>
       <Head>
@@ -20,11 +20,16 @@ const Layout = ({ children, title, description, schema, className }) => {
           content={`${description || t('seo.default_description')}`}
         />
         <link rel="canonical" href={hostname} />
-        <meta property="og:locale" content="es_ES" />
-        <meta property="og:type" content="article" />
-        <meta property="og:url" content="hostname" />
+        <meta
+          property="og:locale"
+          content={lang === 'es' ? 'es_ES' : 'en_US'}
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={hostname} />
         <meta property="og:site_name" content={siteName} />
         <meta name="twitter:card" content="summary_large_image" />
+        <meta property="og:image" content={image} />
+
         <link
           rel="apple-touch-icon"
           sizes="57x57"
