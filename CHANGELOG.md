@@ -1,3 +1,10 @@
+## [1.16.12](https://github.com/tavomak/tusk/compare/v1.16.11...v1.16.12) (2025-02-07)
+
+
+### Bug Fixes
+
+* **Seo:** Metadata fixed ([d5d1389](https://github.com/tavomak/tusk/commit/d5d13895523d7feb0a3eb4bb9d83733b863c82ce))
+
 ## [1.16.11](https://github.com/tavomak/tusk/compare/v1.16.10...v1.16.11) (2025-02-06)
 
 
