@@ -165,7 +165,7 @@ export const getPageBySlug = (slug, locales) =>
               url
             }
           }
-          team {
+          team(first: 50) {
             id
             slug
             image(locales: en) {
