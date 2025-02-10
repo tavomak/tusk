@@ -1,3 +1,10 @@
+## [1.16.13](https://github.com/tavomak/tusk/compare/v1.16.12...v1.16.13) (2025-02-10)
+
+
+### Bug Fixes
+
+* **Design:** Team Metadata fixed ([287bb1e](https://github.com/tavomak/tusk/commit/287bb1ef53c186f9089ab40b502a939de078dd4d))
+
 ## [1.16.12](https://github.com/tavomak/tusk/compare/v1.16.11...v1.16.12) (2025-02-07)
 
 
