@@ -25,16 +25,16 @@ export const navItems = [
   {
     label: 'nav_our_team_title',
     path: '/team',
-    visible: false,
+    visible: true,
     children: [
       {
         label: 'nav_team_title',
         path: '/team',
       },
-      {
-        label: 'nav_filmmakers_title',
-        path: '/filmmakers',
-      },
+      // {
+      //   label: 'nav_filmmakers_title',
+      //   path: '/filmmakers',
+      // },
     ],
   },
   {
