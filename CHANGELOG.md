@@ -1,3 +1,10 @@
+## [1.16.14](https://github.com/tavomak/tusk/compare/v1.16.13...v1.16.14) (2025-03-13)
+
+
+### Bug Fixes
+
+* **design:** Modal close on bg click ([334bbd5](https://github.com/tavomak/tusk/commit/334bbd53341d17aa3cd620b009375bd61e5dd3d2))
+
 ## [1.16.13](https://github.com/tavomak/tusk/compare/v1.16.12...v1.16.13) (2025-02-10)
 
 
