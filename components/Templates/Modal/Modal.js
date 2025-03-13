@@ -12,7 +12,11 @@ const Modal = ({ children, onClick, showModal, size, bgColor, noPadding }) => (
         exit={{ opacity: 0, transform: 'scale(1.1)' }}
         transition={{ duration: 0.3, ease: 'easeInOut' }}
         className="fixed top-0 left-0 z-30 w-screen h-screen overflow-x-hidden overflow-y-auto bg-black bg-opacity-50"
-        onClick={onClick}
+        onClick={(e) => {
+          if (e.target === e.currentTarget) {
+            onClick(e);
+          }
+        }}
       >
         <div
           className={`${size === 'sm' ? styles.sm : styles.md} ${size === 'lg' ? styles.lg : ''} ${size === 'xl' ? styles.xl : ''} ${bgColor ? `${bgColor}` : 'bg-white'} ${noPadding ? 'p-0' : 'p-3'} z-40 relative max-h-[85vh] overflow-y-auto px-6 block top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-2xl`}
