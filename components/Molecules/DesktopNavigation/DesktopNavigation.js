@@ -33,15 +33,10 @@ const DesktopNavigation = ({
       <div className="flex justify-center w-1/3">
         <Link href="/">
           <Image
-            src="/menu-logo.svg"
+            src="/vertical-logo.svg"
             alt={siteName}
-            width={220}
-            height={56}
-            style={{
-              width: '100%',
-              height: 'auto',
-              objectFit: 'contain',
-            }}
+            width={18}
+            height={114}
             priority
           />
         </Link>

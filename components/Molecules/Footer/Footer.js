@@ -32,7 +32,7 @@ const Footer = () => {
         <div className="flex justify-center">
           <div className="w-12">
             <Image
-              src="/tusk_horizontal.png"
+              src="/vertical-logo.svg"
               alt="Logo"
               width={62}
               height={150}
@@ -54,21 +54,21 @@ const Footer = () => {
               <a href={`mailto:${siteEmail}`}>{siteEmail}</a>
             </p>
           </div>
-          <ul className="flex flex-wrap justify-between gap-4 m-auto mb-2 lg:m-0 max-w-80">
-            <li className="flex gap-2">
-              <span>
+          <ul className="flex flex-wrap justify-between m-auto mb-2 lg:m-0 max-w-80">
+            <li className="flex w-1/3 gap-2">
+              <span className="hidden">
                 <Image src="/cl.svg" alt="Chile flag" width={24} height={24} />
               </span>
               <span>{t('footer_locations.chile')}</span>
             </li>
-            <li className="flex gap-2">
-              <span>
+            <li className="flex w-1/3 gap-2">
+              <span className="hidden">
                 <Image src="/pl.svg" alt="Poland flag" width={24} height={24} />
               </span>
               <span>{t('footer_locations.poland')}</span>
             </li>
-            <li className="flex gap-2">
-              <span>
+            <li className="flex w-1/3 gap-2">
+              <span className="hidden">
                 <Image
                   src="/spa.svg"
                   alt="Spanish flag"
@@ -78,8 +78,8 @@ const Footer = () => {
               </span>
               <span>{t('footer_locations.spain')}</span>
             </li>
-            <li className="flex gap-2">
-              <span>
+            <li className="flex w-1/3 gap-2">
+              <span className="hidden">
                 <Image
                   src="/mx.svg"
                   alt="Mexican flag"
@@ -89,8 +89,8 @@ const Footer = () => {
               </span>
               <span>{t('footer_locations.mexico')}</span>
             </li>
-            <li className="flex gap-2">
-              <span>
+            <li className="flex w-1/3 gap-2">
+              <span className="hidden">
                 <Image
                   src="/hk.svg"
                   alt="Hong Kong flag"
@@ -100,8 +100,8 @@ const Footer = () => {
               </span>
               <span>{t('footer_locations.hong_kong')}</span>
             </li>
-            <li className="flex gap-2">
-              <span>
+            <li className="flex w-1/3 gap-2">
+              <span className="hidden">
                 <Image src="/us.svg" alt="USA flag" width={24} height={24} />
               </span>
               <span>{t('footer_locations.usa')}</span>
