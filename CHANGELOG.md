@@ -1,3 +1,10 @@
+## [1.16.15](https://github.com/tavomak/tusk/compare/v1.16.14...v1.16.15) (2025-03-19)
+
+
+### Bug Fixes
+
+* **design:** Logo images ([191533c](https://github.com/tavomak/tusk/commit/191533c1fa425f26625c5a97024d553f524357c6))
+
 ## [1.16.14](https://github.com/tavomak/tusk/compare/v1.16.13...v1.16.14) (2025-03-13)
 
 
