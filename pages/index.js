@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import { getPageBySlug } from '@/utils/lib/api';
-import { socialMedia } from '@/utils/constants';
 import useTranslation from 'next-translate/useTranslation';
 
 import Marquee from 'react-fast-marquee';
@@ -24,16 +23,6 @@ export async function getStaticProps(context) {
   };
 }
 
-const structuredData = {
-  '@context': 'https://schema.org',
-  '@type': 'Organization',
-  url: 'https://www.tuskcontent.com/',
-  logo: 'https://www.tuskcontent.com/horizontal-logo.jpg',
-  name: 'Tuskcontent',
-  legalName: 'Tuskcontent',
-  sameAs: [socialMedia.linkedin, socialMedia.instagram],
-};
-
 const Home = ({ data }) => {
   const { t } = useTranslation('common');
   return (
@@ -41,7 +30,6 @@ const Home = ({ data }) => {
       title={data?.seoMetadata?.title}
       description={data?.seoMetadata?.seoDescription}
       image={data?.seoMetadata?.seoImage?.url}
-      schema={structuredData}
     >
       <section className="container mx-auto max-w-screen-2xl">
         <div className="mx-4 overflow-hidden border rounded-xl xl:rounded-3xl border-neutral-800">

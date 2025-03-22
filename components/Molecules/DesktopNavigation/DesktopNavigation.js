@@ -35,8 +35,8 @@ const DesktopNavigation = ({
           <Image
             src="/vertical-logo.svg"
             alt={siteName}
-            width={18}
-            height={114}
+            width={60}
+            height={90}
             priority
           />
         </Link>

@@ -30,18 +30,14 @@ const Footer = () => {
           </Link>
         </div>
         <div className="flex justify-center">
-          <div className="w-12">
+          <div className="w-20">
             <Image
               src="/vertical-logo.svg"
-              alt="Logo"
-              width={62}
-              height={150}
-              style={{
-                width: '100%',
-                height: 'auto',
-                objectFit: 'contain',
-              }}
+              alt="Tusk Content Logo"
+              width={80}
+              height={120}
               priority
+              className="object-contain h-auto w-100"
             />
           </div>
         </div>
