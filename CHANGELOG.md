@@ -1,3 +1,10 @@
+## [1.16.16](https://github.com/tavomak/tusk/compare/v1.16.15...v1.16.16) (2025-03-22)
+
+
+### Bug Fixes
+
+* **design:** Logo images, schema removed ([36261ac](https://github.com/tavomak/tusk/commit/36261ac3f160a558f7b42520b4aab9082702e41e))
+
 ## [1.16.15](https://github.com/tavomak/tusk/compare/v1.16.14...v1.16.15) (2025-03-19)
 
 
