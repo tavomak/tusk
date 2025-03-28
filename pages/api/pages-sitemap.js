@@ -9,9 +9,12 @@ const sitemapBlog = async (req, res) => {
 
   const staticEnPages = navItems
     .filter((item) => !item.external)
-    .map((item) => ({
-      url: `en${item.path}`,
-    }));
+    .map((item) => {
+      if (item.path === '/') {
+        return { url: 'en' };
+      }
+      return { url: `en${item.path}` };
+    });
 
   const staticPages = [...staticEnPages, ...staticEsPages];
 
