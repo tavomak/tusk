@@ -2,11 +2,11 @@ import Image from 'next/image';
 import { FaLinkedin } from 'react-icons/fa';
 
 const Card = ({ item, handleClick }) => (
-  <a
+  <button
+    type="button"
     key={item.id}
     className="relative block border cursor-pointer group border-neutral-800 rounded-xl"
     onClick={(e) => handleClick(e, item)}
-    href="!#"
   >
     <div className="inset-0 block transition-all duration-300 opacity-0 md:absolute bg-emerald-950 overlay group-hover:opacity-50 rounded-xl" />
     <Image
@@ -32,7 +32,7 @@ const Card = ({ item, handleClick }) => (
         </div>
       )}
     </div>
-  </a>
+  </button>
 );
 
 export default Card;
