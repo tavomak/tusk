@@ -1,3 +1,10 @@
+## [1.16.17](https://github.com/tavomak/tusk/compare/v1.16.16...v1.16.17) (2025-03-28)
+
+
+### Bug Fixes
+
+* **seo:** Sitemaps fix v2.1 ([5a47623](https://github.com/tavomak/tusk/commit/5a476231fbde38bbe81f622394fa6a5944669b7a))
+
 ## [1.16.16](https://github.com/tavomak/tusk/compare/v1.16.15...v1.16.16) (2025-03-22)
 
 
