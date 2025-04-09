@@ -1,3 +1,10 @@
+## [1.16.18](https://github.com/tavomak/tusk/compare/v1.16.17...v1.16.18) (2025-04-09)
+
+
+### Bug Fixes
+
+* **seo:** Sitemaps fix v2.2 and controls on primary video ([d1b7ac5](https://github.com/tavomak/tusk/commit/d1b7ac5544c3e5d9c018ce3018cdefe7cb5f458d))
+
 ## [1.16.17](https://github.com/tavomak/tusk/compare/v1.16.16...v1.16.17) (2025-03-28)
 
 
