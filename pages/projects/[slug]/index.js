@@ -36,9 +36,9 @@ const Project = ({ data }) => (
   >
     <section className="py-6 overflow-x-hidden lg:py-10">
       <Marquee speed={200}>
-        <h1 className="flex gap-4 py-6 text-6xl font-bold 2xl:text-9xl me-20">
+        <h2 className="flex gap-4 py-6 text-6xl font-bold 2xl:text-9xl me-20">
           <span> {data?.title} </span>
-        </h1>
+        </h2>
       </Marquee>
     </section>
     <section className="container mx-auto max-w-screen-xl  mt-8 lg:-mt-[58px] xl:-mt-11 ">

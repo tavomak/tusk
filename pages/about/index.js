@@ -40,13 +40,13 @@ const About = ({ data, services }) => {
           />
         </div>
         <Marquee speed={200}>
-          <h1 className="flex gap-4 py-6 text-6xl font-bold 2xl:text-9xl me-20">
+          <h2 className="flex gap-4 py-6 text-6xl font-bold 2xl:text-9xl me-20">
             <span> Mobile </span>
             <span className="text-primary-color">Design </span>
             <span>
               <i>Filmmaking</i>
             </span>
-          </h1>
+          </h2>
         </Marquee>
       </section>
 

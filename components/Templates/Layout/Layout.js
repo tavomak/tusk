@@ -106,6 +106,7 @@ const Layout = ({ children, title, description, schema, className, image }) => {
       </Head>
       <Navbar />
       <main className={`min-h-[calc(100vh-217px)] flex flex-col ${className}`}>
+        <h1 className="sr-only">{title}</h1>
         {children}
       </main>
       <ToastContainer />
