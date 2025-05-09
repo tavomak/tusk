@@ -33,7 +33,7 @@ const Home = ({ data }) => {
     >
       <section className="container mx-auto max-w-screen-2xl">
         <div className="mx-4 overflow-hidden border rounded-xl xl:rounded-3xl border-neutral-800">
-          <VideoIframe videoId={data?.primaryVideo} controls />
+          <VideoIframe videoId={data?.primaryVideo} controls muted />
         </div>
       </section>
 
@@ -64,7 +64,7 @@ const Home = ({ data }) => {
 
       <section className="container max-w-screen-xl px-4 py-10 mx-auto xl:py-20">
         <div className="overflow-hidden border rounded-xl xl:rounded-3xl border-neutral-800">
-          <VideoIframe videoId={data?.secondVideo} />
+          <VideoIframe videoId={data?.secondVideo} muted />
         </div>
       </section>
 
