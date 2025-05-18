@@ -5,7 +5,8 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    unoptimized: true,
+    deviceSizes: [768, 1440],
+    imageSizes: [32, 128],
     remotePatterns: [
       {
         protocol: 'https',
